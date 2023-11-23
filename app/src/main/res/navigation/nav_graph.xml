@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/fragDashboard">
+
+    <fragment
+        android:id="@+id/fragDashboard"
+        android:name="com.silentbit.thingshubmobile.ui.view.FragDashboard"
+        android:label="Dashboard"
+        tools:layout="@layout/frag_dashboard" />
+    <fragment
+        android:id="@+id/fragDataServer"
+        android:name="com.silentbit.thingshubmobile.ui.view.FragDataServer"
+        android:label="Data Server"
+        tools:layout="@layout/frag_data_server" />
+    <fragment
+        android:id="@+id/fragDevice"
+        android:name="com.silentbit.thingshubmobile.ui.view.FragDevice"
+        android:label="Devices"
+        tools:layout="@layout/frag_device" />
+    <fragment
+        android:id="@+id/fragSensors"
+        android:name="com.silentbit.thingshubmobile.ui.view.FragSensors"
+        android:label="Sensors"
+        tools:layout="@layout/frag_sensors" />
+    <fragment
+        android:id="@+id/fragActuators"
+        android:name="com.silentbit.thingshubmobile.ui.view.FragActuators"
+        android:label="Actuators"
+        tools:layout="@layout/frag_actuators" />
+    <fragment
+        android:id="@+id/fragInitSelecDataserver"
+        android:name="com.silentbit.thingshubmobile.FragInitSelecDataserver"
+        android:label="Select Data Server"
+        tools:layout="@layout/frag_init_selec_dataserver" />
+</navigation>

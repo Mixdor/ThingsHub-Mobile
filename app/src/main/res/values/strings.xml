@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ThingsHub Mobile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur, justo et fringilla facilisis, velit sapien ultricies lorem, sit amet tristique mauris odio id ligula. Nullam eget arcu vestibulum, fermentum velit eget, facilisis ante. Duis dapibus sem at lectus condimentum, a consequat enim efficitur. Proin ultrices, nisi eget suscipit interdum, velit velit ullamcorper tortor, id consectetur risus neque nec justo. Maecenas eu bibendum orci. Quisque sit amet ante ac libero congue convallis eget in ligula. Pellentesque sed massa sit amet arcu placerat rhoncus eget vel urna.</string>
+</resources>
