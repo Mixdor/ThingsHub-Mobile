@@ -11,13 +11,19 @@ class FirebaseAdmin @Inject constructor() {
 
     fun getFirebaseApp(context:Context, apiKey:String, idApp:String, dataBaseUrl:String): FirebaseApp {
 
+        val listApps = FirebaseApp.getApps(context)
+        if (listApps.isNotEmpty()){
+            for (app in listApps){
+                app.delete()
+            }
+        }
+
         val options = FirebaseOptions.Builder()
             .setApiKey(apiKey)
             .setApplicationId(idApp)
             .setDatabaseUrl(dataBaseUrl)
-            .build()
 
-        return Firebase.initialize(context, options)
+        return Firebase.initialize(context, options.build(),"Primary")
 
     }
 

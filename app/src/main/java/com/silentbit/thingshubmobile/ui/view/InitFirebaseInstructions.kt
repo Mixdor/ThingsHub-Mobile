@@ -2,6 +2,7 @@ package com.silentbit.thingshubmobile.ui.view
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.silentbit.thingshubmobile.databinding.InitFirebaseInstructionsBinding
@@ -27,16 +28,13 @@ class InitFirebaseInstructions : AppCompatActivity() {
             startActivity(intent)
         }
 
-    }
-
-    override fun onBackPressed() {
-        if (viewPager.currentItem == 0) {
-            // If the user is currently looking at the first step, allow the system to handle the
-            // Back button. This calls finish() on this activity and pops the back stack.
-            super.onBackPressed()
-        } else {
-            // Otherwise, select the previous step.
-            viewPager.currentItem = viewPager.currentItem - 1
+        onBackPressedDispatcher.addCallback(this /* lifecycle owner */) {
+            // Back is pressed... Finishing the activity
+            if (viewPager.currentItem == 0) {
+                finish()
+            } else {
+                viewPager.currentItem = viewPager.currentItem - 1
+            }
         }
     }
 

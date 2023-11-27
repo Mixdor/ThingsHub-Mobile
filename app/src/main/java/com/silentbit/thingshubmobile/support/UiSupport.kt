@@ -6,8 +6,8 @@ import javax.inject.Inject
 
 class UiSupport @Inject constructor(){
 
-    fun showErrorAlertDialog(acticity:Activity, title: String, message: String) {
-        MaterialAlertDialogBuilder(acticity)
+    fun showErrorAlertDialog(activity:Activity, title: String, message: String) {
+        MaterialAlertDialogBuilder(activity)
             .setTitle(title)
             .setMessage(message)
             .setPositiveButton("OK") { dialog, _ ->
