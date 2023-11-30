@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ThingsHub Mobile</string>
+
+    <!--General-->
+    <string name="next">Siguiente</string>
+    <string name="skip">Omitir</string>
+
+    <!--Select Server-->
+    <string name="select_server_type">Selecciona el tipo de servidor que tengas</string>
+
+    <!--Firebase Instruction 1-->
+    <string name="create_new_firebase_project">Crear un nuevo proyecto de Firebase</string>
+    <string name="sign_in_or_create_account">Si ya tienes una cuenta de Firebase, inicia sesión o crea una nueva usando tu cuenta de Google en el siguiente enlace</string>
+    <string name="create_new_project_console">Una vez en tu consola de Firebase, debes crear un nuevo proyecto (se recomienda mantener activado Analytics)</string>
+    <string name="add_new_app">Desde tu proyecto de Firebase, añade una nueva app al proyecto; en este caso, será una app para Android</string>
+    <string name="register_app">Registra la app</string>
+    <string name="android_package_name">En el campo del nombre del paquete de Android, debes ingresar</string>
+    <string name="download_google_services">Descarga y guarda el archivo</string>
+    <string name="google_services_json">google-services.json</string>
+    <string name="contains_data">Este archivo contiene datos que usaremos más adelante</string>
+    <string name="next_next_console">Luego haz clic en Siguiente, Siguiente y ve a la consola</string>
+
+    <!--Firebase Instruction 2-->
+    <string name="create_realtime_database">Crear una Realtime Database</string>
+    <string name="go_to_compilation_tab">Ve a la pestaña de Compilación y luego selecciona Realtime Database</string>
+    <string name="create_database">Crea una base de datos, elige la ubicación que más te convenga</string>
+    <string name="configure_security_rules">Configura las reglas de seguridad en modo bloqueado, por ahora</string>
+    <string name="go_to_realtime_database_rules">Luego, ve a las reglas de la Base de datos en tiempo real y configúralas de la siguiente manera para que tus datos solo puedan ser accedidos por un usuario autenticado</string>
+    <string name="dont_forget_publish_changes">No olvides publicar los cambios</string>
+
+    <!--Firebase Instruction 3-->
+    <string name="enable_authentication">Habilitar Authentication</string>
+    <string name="go_to_compile_tab_authentication">Ve a la pestaña de Compilación y luego a Authentication</string>
+    <string name="add_access_provider">Añade un proveedor de acceso, en este caso, necesitamos habilitar el proveedor nativo</string>
+    <string name="email_password">Correo electrónico/Contraseña</string>
+    <string name="do_not_enable_access_without_password">No habilites el acceso sin contraseña</string>
+    <string name="save_changes">Guarda los cambios y listo</string>
+
+    <!--Credentials-->
+    <string name="credentials">Credenciales</string>
+    <string name="enter_server_credentials">Ingresa las siguientes credenciales del servidor</string>
+    <string name="user_credentials">Ingresa las credenciales relacionadas con el usuario que administrará los datos del servidor</string>
+    <string name="user_email">Correo electrónico</string>
+    <string name="user_password">Contraseña</string>
+
+    <string name="register">Registrar</string>
+    <string name="login">Iniciar sesión</string>
+
+    <!--Dialogs-->
+    <string name="unknown_error">Error desconocido</string>
+    <string name="app_id_issue">¡Ups! Parece que hay un problema con tu ID de aplicación. Por favor, verifica el ID que has proporcionado y asegúrate de que coincida con el formato requerido.</string>
+    <string name="credentials_helper">Asistente de Credenciales</string>
+    <string name="current_key">Es la variable current_key dentro de tu archivo google-services.json</string>
+    <string name="mobilesdk_app_id">Se encuentra en mobilesdk_app_id dentro de tu archivo google-services.json</string>
+    <string name="root_database_url">Es la dirección raíz de tu Base de Datos en Tiempo Real</string>
+
+    <string name="timeout">Tiempo de espera</string>
+    <string name="database_timeout_error">La conexión a la base de datos ha excedido el tiempo límite y el acceso a los datos no está disponible actualmente. Por favor, verifica que la URL de la base de datos sea correcta, revisa tu conexión a internet y asegúrate de tener los permisos necesarios.</string>
+    <string name="example_api_key">Ejemplo de API Key</string>
+    <string name="example_application_id">Ejemplo de Application ID</string>
+    <string name="example_database_url">Ejemplo de URL de la Base de Datos</string>
+
+
+</resources>

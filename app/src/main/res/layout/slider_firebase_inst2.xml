@@ -14,7 +14,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Ve a la pestaña de Compilacion y luego en RealtimeDatabase"
+        android:text="@string/go_to_compilation_tab"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView23" />
@@ -26,7 +26,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Crea una base de datos, seleciona la ubicacion de la base de datos que mas te convenga"
+        android:text="@string/create_database"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
@@ -38,7 +38,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Configura las reglas de seguridad en modo bloquedado por ahora"
+        android:text="@string/configure_security_rules"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView20" />
@@ -50,7 +50,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Luego ve a las reglas de Realtime Database, y configuralas de la siguiente forma para que tus datos solo puedan ser accedidos por un usuario autenticado"
+        android:text="@string/go_to_realtime_database_rules"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView21" />
@@ -61,20 +61,21 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Crear una Realtime Database"
+        android:text="@string/create_realtime_database"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/round_text_view"
-        android:padding="8dp"
+        android:paddingVertical="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView22">
@@ -84,8 +85,19 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:fontFamily="monospace"
-            android:text="{\n  &quot;rules&quot;:{\n    &quot;$user_id&quot;:{\n      &quot;.read&quot;:&quot;$user_id === auth.uid&quot;,\n      &quot;.write&quot; : &quot;$user_id === auth.uid&quot;\n    }\n  }\n}"
+            android:text="@string/rules_firebase"
+            android:textColor="?attr/colorOnSecondaryContainer"
             android:textSize="14sp" />
     </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/dont_forget_publish_changes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

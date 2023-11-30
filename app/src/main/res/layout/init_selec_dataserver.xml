@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/top_app_bar"
-        app:title="Things Hub"
+        app:title="@string/things_hub"
         app:titleTextColor="@color/white" />
 
     <TextView
@@ -29,7 +29,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Selecciona el tipo de servidor que tengas"
+        android:text="@string/select_server_type"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topAppBar" />
@@ -47,28 +47,28 @@
             android:id="@+id/rbFirebase"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Firebase" />
+            android:text="@string/firebase" />
 
         <RadioButton
             android:id="@+id/rbAWS"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:enabled="false"
-            android:text="Aws" />
+            android:text="@string/aws" />
 
         <RadioButton
             android:id="@+id/rbAzure"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:enabled="false"
-            android:text="Azure" />
+            android:text="@string/azure" />
 
         <RadioButton
             android:id="@+id/rbGoogleCloud"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:enabled="false"
-            android:text="Google Cloud" />
+            android:text="@string/google_cloud" />
 
     </RadioGroup>
 
@@ -80,7 +80,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:enabled="false"
-        android:text="Next"
+        android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

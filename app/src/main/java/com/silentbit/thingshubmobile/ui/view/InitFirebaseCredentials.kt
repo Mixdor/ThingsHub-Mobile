@@ -9,6 +9,7 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 import com.google.firebase.database.database
+import com.silentbit.thingshubmobile.R
 import com.silentbit.thingshubmobile.data.DataStoreManager
 import com.silentbit.thingshubmobile.data.FirebaseAdmin
 import com.silentbit.thingshubmobile.databinding.InitFirebaseCredentialsBinding
@@ -56,7 +57,7 @@ class InitFirebaseCredentials : AppCompatActivity() {
                 auth.createUserWithEmailAndPassword(mail, pass).addOnCompleteListener(this) { task ->
                     if (!task.isSuccessful) {
                         uiSupport.showErrorAlertDialog(this,
-                            "Error",task.exception?.message ?: "Unknown error"
+                            getString(R.string.error),task.exception?.message ?: getString(R.string.unknown_error)
                         )
                     } else {
                         validateDataBase(firebaseApp, auth)
@@ -65,7 +66,7 @@ class InitFirebaseCredentials : AppCompatActivity() {
             }
             else{
                 uiSupport.showErrorAlertDialog(this,
-                    "Error", "Oops! It seems there's an issue with your application ID. Please double-check the ID you've provided and ensure it matches the required format.")
+                    getString(R.string.error), getString(R.string.app_id_issue))
             }
         }
 
@@ -78,7 +79,7 @@ class InitFirebaseCredentials : AppCompatActivity() {
 
                 auth.signInWithEmailAndPassword(mail, pass).addOnCompleteListener { task ->
                     if (!task.isSuccessful){
-                        uiSupport.showErrorAlertDialog(this,"Error", task.exception?.message ?: "Unknown error")
+                        uiSupport.showErrorAlertDialog(this, getString(R.string.error), task.exception?.message ?: getString(R.string.unknown_error))
                     }
                     else{
                         validateDataBase(firebaseApp, auth)
@@ -87,10 +88,30 @@ class InitFirebaseCredentials : AppCompatActivity() {
             }
             else{
                 uiSupport.showErrorAlertDialog(this,
-                    "Error", "Oops! It seems there's an issue with your application ID. Please double-check the ID you've provided and ensure it matches the required format.")
+                    getString(R.string.error), getString(R.string.app_id_issue))
             }
 
+        }
 
+        binding.btnHelpApiKey.setOnClickListener{
+            uiSupport.showHelpAlertDialog(this,
+                getString(R.string.api_key), getString(R.string.current_key),
+                R.layout.img_help_apikey
+            )
+        }
+
+        binding.btnHelpAppId.setOnClickListener{
+            uiSupport.showHelpAlertDialog(this,
+                getString(R.string.application_id), getString(R.string.mobilesdk_app_id),
+                R.layout.img_help_app_id
+            )
+        }
+
+        binding.btnHelpDatabaseUrl.setOnClickListener {
+            uiSupport.showHelpAlertDialog(this,
+                getString(R.string.database_url), getString(R.string.root_database_url),
+                R.layout.img_help_url_database
+            )
         }
 
     }
@@ -132,9 +153,9 @@ class InitFirebaseCredentials : AppCompatActivity() {
 
         /*Test credentials*/
 
-        apiKey = "AIzaSyBO3mCBXGffV5ahQHyr4N21bF0fANX99tk"
-        idApp = "1:683460994618:android:34079fa32c72165c903703"
-        dataBaseUrl = "https://thingshub-577fc-default-rtdb.firebaseio.com/"
+        apiKey = "AIzaSyAwoZ5VVk0Dh4jG5I7mwglZmSVisBxR0FM"
+        idApp = "1:911681667162:android:60f0ddea565b57606ed863"
+        dataBaseUrl = "https://test3ef78-default-rtdb.firebaseio.com/"
         mail = "correodeprueba1@thingshub.com"
         pass = "123456789"
     }

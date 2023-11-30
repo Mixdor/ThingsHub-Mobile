@@ -1,6 +1,79 @@
 <resources>
     <string name="app_name">ThingsHub Mobile</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur, justo et fringilla facilisis, velit sapien ultricies lorem, sit amet tristique mauris odio id ligula. Nullam eget arcu vestibulum, fermentum velit eget, facilisis ante. Duis dapibus sem at lectus condimentum, a consequat enim efficitur. Proin ultrices, nisi eget suscipit interdum, velit velit ullamcorper tortor, id consectetur risus neque nec justo. Maecenas eu bibendum orci. Quisque sit amet ante ac libero congue convallis eget in ligula. Pellentesque sed massa sit amet arcu placerat rhoncus eget vel urna.</string>
+    <string name="things_hub" translatable="false">Things Hub</string>
+
+    <!--General-->
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+
+    <!--Select Sever-->
+    <string name="select_server_type">Select the type of server you have</string>
+    <string name="firebase" translatable="false">Firebase</string>
+    <string name="aws" translatable="false">AWS</string>
+    <string name="azure" translatable="false">Azure</string>
+    <string name="google_cloud" translatable="false">Google Cloud</string>
+
+    <!--Firebase Instruction 1-->
+    <string name="create_new_firebase_project">Create a new Firebase project</string>
+    <string name="sign_in_or_create_account">If you already have a Firebase account, sign in or create a new one using your Google account at the following link</string>
+    <string name="firebase_link" translatable="false">https://firebase.google.com/</string>
+    <string name="create_new_project_console">Once in your Firebase console, you should create a new project (It\'s recommended to keep analytics enabled)</string>
+    <string name="add_new_app">From your Firebase project, add a new app to the project; in this case, it will be an app for Android</string>
+    <string name="register_app">Register the app</string>
+    <string name="android_package_name">In the Android package name field, you should enter</string>
+    <string name="package_name" translatable="false">com.silentbit.thingshubmobile</string>
+    <string name="download_google_services">Download and save the file</string>
+    <string name="google_services_json">google-services.json</string>
+    <string name="contains_data">This file contains data that we will use later</string>
+    <string name="next_next_console">Then click Next, Next, and go to the console</string>
+
+    <!--Firebase Instruction 2-->
+    <string name="create_realtime_database">Create a Realtime Database</string>
+    <string name="go_to_compilation_tab">Go to the Compilation tab and then select Realtime Database</string>
+    <string name="create_database">Create a database, choose the location that suits you best</string>
+    <string name="configure_security_rules">Configure security rules to be locked down for now</string>
+    <string name="go_to_realtime_database_rules">Then, go to Realtime Database rules and configure them as follows so that your data can only be accessed by an authenticated user</string>
+    <string name="rules_firebase" translatable="false">{\n\u0020\u0020\"rules\":{\n\u0020\u0020\u0020\u0020\"$user_id\":{\n\u0020\u0020\u0020\u0020\u0020\u0020\".read\"\u0020:\u0020\"$user_id\u0020===\u0020auth.uid\",\n\u0020\u0020\u0020\u0020\u0020\u0020\".write\"\u0020:\u0020\"$user_id\u0020===\u0020auth.uid\"\n\u0020\u0020\u0020\u0020}\n\u0020\u0020}\n}</string>
+    <string name="dont_forget_publish_changes">Don\'t forget to publish the changes</string>
+
+    <!--Firebase Instruction 3-->
+    <string name="enable_authentication">Enable Authentication</string>
+    <string name="go_to_compile_tab_authentication">Go to the Compilation tab and then to Authentication</string>
+    <string name="add_access_provider">Add an access provider, in this case, we need to enable the native provider</string>
+    <string name="email_password">Email/Password</string>
+    <string name="do_not_enable_access_without_password">Do not enable access without a password</string>
+    <string name="save_changes">Save changes and you\'re all set</string>
+
+
+    <!--Credentials-->
+    <string name="credentials">Credentials</string>
+    <string name="enter_server_credentials">Enter the following server credentials</string>
+    <string name="api_key" translatable="false">Api Key</string>
+    <string name="application_id" translatable="false">Application Id</string>
+    <string name="database_url" translatable="false">Database URL</string>
+    <string name="user_credentials">Enter the credentials related to the user who will manage the server data</string>
+    <string name="user_email">Email</string>
+    <string name="user_password">Password</string>
+
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+
+    <!--Dialogs-->
+    <string name="error" translatable="false">Error</string>
+    <string name="unknown_error">Unknown error</string>
+    <string name="app_id_issue">Oops! It seems there\'s an issue with your application ID. Please double-check the ID you\'ve provided and ensure it matches the required format.</string>
+    <string name="credentials_helper">Credentials Helper</string>
+    <string name="current_key">It\'s the current_key variable inside your google-services.json file</string>
+    <string name="mobilesdk_app_id">It\'s located at mobilesdk_app_id within your google-services.json file</string>
+    <string name="root_database_url">It\'s the root address of your Realtime Database</string>
+
+    <string name="timeout">Timeout</string>
+    <string name="database_timeout_error">The connection to the database has timed out, and access to data is currently unavailable. Please verify that the database URL is correct, check your internet connection, and ensure you have the necessary permissions.</string>
+
+    <string name="example_api_key">Example of API Key</string>
+    <string name="example_application_id">Example of Application ID</string>
+    <string name="example_database_url">Example of Database URL</string>
+
+
+
 </resources>

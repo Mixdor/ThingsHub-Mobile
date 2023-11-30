@@ -5,8 +5,9 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.silentbit.thingshubmobile.ui.view.instructions.SliderFirebaseInst1
 import com.silentbit.thingshubmobile.ui.view.instructions.SliderFirebaseInst2
+import com.silentbit.thingshubmobile.ui.view.instructions.SliderFirebaseInst3
 
-private const val NUM_PAGES = 2
+private const val NUM_PAGES = 3
 
 class InstructionsPagerAdapter(fa: FragmentActivity) : FragmentStateAdapter(fa) {
     override fun getItemCount(): Int {
@@ -15,11 +16,10 @@ class InstructionsPagerAdapter(fa: FragmentActivity) : FragmentStateAdapter(fa) 
 
     override fun createFragment(position: Int): Fragment {
 
-        return if(position==0){
-            SliderFirebaseInst1()
-        }
-        else{
-            SliderFirebaseInst2()
+        return when(position){
+            0 -> SliderFirebaseInst1()
+            1 -> SliderFirebaseInst2()
+            else -> SliderFirebaseInst3()
         }
 
     }
