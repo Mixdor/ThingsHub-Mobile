@@ -137,7 +137,7 @@ class InitFirebaseCredentials : AppCompatActivity() {
                 else{
                     dataBase.goOffline()
                     uiSupport.showErrorAlertDialog(activity,
-                        "Timeout", "The connection to the database has timed out, and access to data is currently unavailable. Please verify that the database URL is correct or check your internet connection")
+                        getString(R.string.timeout), getString(R.string.database_timeout_error))
                 }
             }
         }
