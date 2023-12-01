@@ -26,7 +26,7 @@
     <string name="go_to_compilation_tab">Ve a la pestaña de Compilación y luego selecciona Realtime Database</string>
     <string name="create_database">Crea una base de datos, elige la ubicación que más te convenga</string>
     <string name="configure_security_rules">Configura las reglas de seguridad en modo bloqueado, por ahora</string>
-    <string name="go_to_realtime_database_rules">Luego, ve a las reglas de la Base de datos en tiempo real y configúralas de la siguiente manera para que tus datos solo puedan ser accedidos por un usuario autenticado</string>
+    <string name="go_to_realtime_database_rules">Luego, ve a las Reglas de la Realtime Database y configúralas de la siguiente manera para que tus datos solo puedan ser accedidos por un usuario autenticado</string>
     <string name="dont_forget_publish_changes">No olvides publicar los cambios</string>
 
     <!--Firebase Instruction 3-->
@@ -60,6 +60,10 @@
     <string name="example_api_key">Ejemplo de API Key</string>
     <string name="example_application_id">Ejemplo de Application ID</string>
     <string name="example_database_url">Ejemplo de URL de la Base de Datos</string>
+
+    <!--Bold-->
+    <string name="compilation">Compilación</string>
+    <string name="rules">Reglas</string>
 
 
 </resources>

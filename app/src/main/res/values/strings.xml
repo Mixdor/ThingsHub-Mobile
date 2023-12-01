@@ -32,7 +32,7 @@
     <string name="go_to_compilation_tab">Go to the Compilation tab and then select Realtime Database</string>
     <string name="create_database">Create a database, choose the location that suits you best</string>
     <string name="configure_security_rules">Configure security rules to be locked down for now</string>
-    <string name="go_to_realtime_database_rules">Then, go to Realtime Database rules and configure them as follows so that your data can only be accessed by an authenticated user</string>
+    <string name="go_to_realtime_database_rules">Then, go to Realtime Database Rules and configure them as follows so that your data can only be accessed by an authenticated user</string>
     <string name="rules_firebase" translatable="false">{\n\u0020\u0020\"rules\":{\n\u0020\u0020\u0020\u0020\"$user_id\":{\n\u0020\u0020\u0020\u0020\u0020\u0020\".read\"\u0020:\u0020\"$user_id\u0020===\u0020auth.uid\",\n\u0020\u0020\u0020\u0020\u0020\u0020\".write\"\u0020:\u0020\"$user_id\u0020===\u0020auth.uid\"\n\u0020\u0020\u0020\u0020}\n\u0020\u0020}\n}</string>
     <string name="dont_forget_publish_changes">Don\'t forget to publish the changes</string>
 
@@ -43,7 +43,6 @@
     <string name="email_password">Email/Password</string>
     <string name="do_not_enable_access_without_password">Do not enable access without a password</string>
     <string name="save_changes">Save changes and you\'re all set</string>
-
 
     <!--Credentials-->
     <string name="credentials">Credentials</string>
@@ -74,6 +73,10 @@
     <string name="example_application_id">Example of Application ID</string>
     <string name="example_database_url">Example of Database URL</string>
 
-
+    <!--Bold-->
+    <string name="realtime_database" translatable="false">Realtime Database</string>
+    <string name="compilation">Compilation</string>
+    <string name="rules">Rules</string>
+    <string name="authentication" translatable="false">Authentication</string>
 
 </resources>
