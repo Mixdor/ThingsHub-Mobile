@@ -4,6 +4,7 @@ import android.graphics.Typeface
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.StyleSpan
+import android.text.style.UnderlineSpan
 import android.widget.TextView
 import androidx.core.text.toSpannable
 import javax.inject.Inject
@@ -69,7 +70,7 @@ class SpanBuilder @Inject constructor() {
         textView.setText(text, TextView.BufferType.SPANNABLE)
     }
 
-    fun getSpannable(message: String, target: String) :Spannable{
+    fun getSpannableBold(message: String, target: String) :Spannable{
 
         val sequence = Regex(target).findAll(message)
         val spanString = SpannableString(message)
@@ -85,7 +86,7 @@ class SpanBuilder @Inject constructor() {
         return spanString
     }
 
-    fun getSpannable(message: String, targets: List<String>) :Spannable{
+    fun getSpannableBold(message: String, targets: List<String>) :Spannable {
 
         val spanString = SpannableString(message)
 
@@ -101,6 +102,15 @@ class SpanBuilder @Inject constructor() {
                 )
             }
         }
+        return spanString
+    }
+
+    fun getSpannableUnder(message: String): Spannable {
+
+        val spanString = SpannableString(message)
+        spanString.setSpan(
+            UnderlineSpan(), 0, message.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
         return spanString
     }
 

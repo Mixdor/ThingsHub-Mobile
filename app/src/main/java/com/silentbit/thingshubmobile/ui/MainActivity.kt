@@ -11,10 +11,10 @@ import androidx.navigation.ui.setupWithNavController
 import com.silentbit.thingshubmobile.R
 import com.silentbit.thingshubmobile.data.DataStoreManager
 import com.silentbit.thingshubmobile.databinding.ActivityMainBinding
+import com.silentbit.thingshubmobile.support.Units
 import com.silentbit.thingshubmobile.ui.view.InitSelecDataserver
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     @Inject lateinit var dataStoreManager : DataStoreManager
+    @Inject lateinit var units: Units
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,12 +32,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        units.setActivity(this)
+
         val intent = Intent(this, InitSelecDataserver::class.java)
 
         lifecycleScope.launch(Dispatchers.IO) {
-            val credentials = dataStoreManager.loadFirebaseCredentials()
+            val typeServer = dataStoreManager.loadTypeServer()
             withContext(Dispatchers.Main){
-                if (credentials.first().address == "" || credentials.first().token == "") {
+                if (typeServer == "") {
                     startActivity(intent)
                     finishAffinity()
                 }

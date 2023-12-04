@@ -131,6 +131,13 @@ class InitFirebaseCredentials : AppCompatActivity() {
             delay(5000)
             withContext(Dispatchers.Main){
                 if(test!=null){
+                    dataStoreManager.saveTypeServer(getString(R.string.firebase))
+                    dataStoreManager.saveFirebaseCredentials(
+                        binding.txtFirebaseApiKey.text.toString(),
+                        binding.txtApplicationId.text.toString(),
+                        binding.txtFirebaseDbUrl.text.toString(),
+                        binding.txtFirebaseAuthMail.text.toString()
+                    )
                     startActivity(intent)
                     finishAffinity()
                 }
@@ -145,19 +152,18 @@ class InitFirebaseCredentials : AppCompatActivity() {
 
     private fun setStringsCredentials() {
 
-        /*apiKey = binding.txtFirebaseApiKey.text.toString()
+        apiKey = binding.txtFirebaseApiKey.text.toString()
         idApp = binding.txtApplicationId.text.toString()
         dataBaseUrl = binding.txtFirebaseDbUrl.text.toString()
         mail = binding.txtFirebaseAuthMail.text.toString()
-        pass = binding.txtFirebaseAuthPassword.text.toString()*/
+        pass = binding.txtFirebaseAuthPassword.text.toString()
 
         /*Test credentials*/
-
-        apiKey = "AIzaSyAwoZ5VVk0Dh4jG5I7mwglZmSVisBxR0FM"
+        /*apiKey = "AIzaSyAwoZ5VVk0Dh4jG5I7mwglZmSVisBxR0FM"
         idApp = "1:911681667162:android:60f0ddea565b57606ed863"
         dataBaseUrl = "https://test3ef78-default-rtdb.firebaseio.com/"
         mail = "correodeprueba1@thingshub.com"
-        pass = "123456789"
+        pass = "123456789"*/
     }
 
 }

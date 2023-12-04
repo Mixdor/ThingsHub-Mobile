@@ -4,7 +4,11 @@ import android.content.Context
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
+import com.google.firebase.Firebase
+import com.google.firebase.FirebaseOptions
+import com.google.firebase.initialize
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
@@ -14,18 +18,42 @@ class DataStoreManager @Inject constructor(
     @ApplicationContext val context: Context
 ){
     private val datastore = context.datastore
+    suspend fun loadFirebaseApp() = datastore.data.map { prefer ->
+
+        val options = FirebaseOptions.Builder()
+            .setApiKey(prefer[stringPreferencesKey("apiKey")] ?: "")
+            .setApplicationId(prefer[stringPreferencesKey("appId")] ?: "")
+            .setDatabaseUrl(prefer[stringPreferencesKey("databaseUrl")] ?: "")
+
+        Firebase.initialize(context, options.build(), "Primary")
+    }.first()
 
     suspend fun loadFirebaseCredentials() = datastore.data.map { prefer ->
         FirebaseCredentialsProfile(
-            address = prefer[stringPreferencesKey("address")] ?: "",
-            token = prefer[stringPreferencesKey("token")] ?: ""
+            apiKey = prefer[stringPreferencesKey("apiKey")] ?: "",
+            appId = prefer[stringPreferencesKey("appId")] ?: "",
+            databaseUrl = prefer[stringPreferencesKey("databaseUrl")] ?: "",
+            mail = prefer[stringPreferencesKey("mail")] ?: ""
         )
+    }.first()
+
+    suspend fun saveFirebaseCredentials(apiKey:String, appId:String, databaseUrl:String, mail:String){
+
+        datastore.edit {
+            it[stringPreferencesKey("apiKey")] = apiKey
+            it[stringPreferencesKey("appId")] = appId
+            it[stringPreferencesKey("databaseUrl")] = databaseUrl
+            it[stringPreferencesKey("mail")] = mail
+        }
     }
 
-    suspend fun saveFirebaseCredentials(database:String, token:String){
+
+    suspend fun loadTypeServer() = datastore.data.map { prefer ->
+        prefer[stringPreferencesKey("nameServer")] ?: ""
+    }.first()
+    suspend fun saveTypeServer(nameServer: String) {
         datastore.edit {
-            it[stringPreferencesKey("address")] = database
-            it[stringPreferencesKey("token")] = token
+            it[stringPreferencesKey("nameServer")] = nameServer
         }
     }
 
