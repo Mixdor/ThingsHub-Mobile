@@ -23,7 +23,7 @@ class UiSupport @Inject constructor(
     fun showHelpAlertDialog(activity: Activity, title:String, message: String, extraLayout:Int){
 
         val listBold = listOf("current_key", "google-services.json", "mobilesdk_app_id")
-        val spanMessage = spanBuilder.getSpannable(message, listBold)
+        val spanMessage = spanBuilder.getSpannableBold(message, listBold)
 
         MaterialAlertDialogBuilder(activity, com.google.android.material.R.style.ThemeOverlay_Material3_MaterialAlertDialog_Centered)
             .setIcon(R.drawable.baseline_help_outline_24)
