@@ -59,6 +59,7 @@ dependencies {
     // Activity
     implementation("androidx.activity:activity-ktx:1.8.1")
     implementation("com.google.firebase:firebase-crashlytics-buildtools:2.9.9")
+
     val navVersion = "2.7.5"
     implementation ("androidx.navigation:navigation-fragment-ktx:$navVersion")
     implementation ("androidx.navigation:navigation-ui-ktx:$navVersion")
@@ -79,5 +80,10 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.firebase:firebase-database-ktx")
+
+    // ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+    // LiveData
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
 
 }
