@@ -5,6 +5,8 @@
     <!--General-->
     <string name="next">Next</string>
     <string name="skip">Skip</string>
+    <string name="ok" translatable="false">OK</string>
+    <string name="manager_iot">Manager IoT</string>
 
     <!--Select Sever-->
     <string name="select_server_type">Select the type of server you have</string>
@@ -73,10 +75,51 @@
     <string name="example_application_id">Example of Application ID</string>
     <string name="example_database_url">Example of Database URL</string>
 
+    <string name="authentication_required">Authentication Required</string>
+    <string name="enter_admin_password">Enter the Administrator Password</string>
+    <string name="done">Done</string>
+
+
     <!--Bold-->
     <string name="realtime_database" translatable="false">Realtime Database</string>
     <string name="compilation">Compilation</string>
     <string name="rules">Rules</string>
     <string name="authentication" translatable="false">Authentication</string>
+
+
+    <string name="devices">Devices</string>
+    <string name="actuators">Actuators</string>
+    <string name="sensors">Sensors</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="data_server">Data Server</string>
+
+
+    <!--CRUD-->
+    <string name="add">Add</string>
+    <string name="edit">Edit</string>
+    <string name="remove">Remove</string>
+
+    <string name="identifier">Identifier</string>
+    <string name="name">Name</string>
+    <string name="optional_description">Description (Optional)</string>
+
+    <!--Card Device-->
+    <string name="number_of_sensors">Number of Sensors</string>
+    <string name="number_of_actuators">Number of Actuators</string>
+
+    <string name="warning">Warning</string>
+    <string name="delete_data_warning">You are about to delete all data associated with the following devices</string>
+    <string name="delete_devices">Delete Devices</string>
+
+    <!--New Device-->
+    <string name="new_device">New Device</string>
+    <string name="add_new_device">Add New Device</string>
+    <string name="create_new_device_and_link">Create a new device, then you can attach sensors and actuators</string>
+
+    <!--Edit Device-->
+    <string name="edit_device">Edit Device</string>
+    <string name="apply_changes">Apply Changes</string>
+    <string name="modify_device_properties">Modify your device\'s properties</string>
+
 
 </resources>

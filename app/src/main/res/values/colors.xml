@@ -37,7 +37,7 @@
     <color name="md_theme_light_onSurface">#191C1C</color>
     <color name="md_theme_light_surfaceVariant">#DAE5E4</color>
     <color name="md_theme_light_onSurfaceVariant">#3F4948</color>
-    <color name="md_theme_light_outline">#6F7979</color>
+    <color name="md_theme_light_outline">#606868</color>
     <color name="md_theme_light_inverseOnSurface">#EFF1F0</color>
     <color name="md_theme_light_inverseSurface">#2D3131</color>
     <color name="md_theme_light_inversePrimary">#4CDADB</color>

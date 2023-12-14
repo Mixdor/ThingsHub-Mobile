@@ -10,11 +10,10 @@ import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.Firebase
-import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.auth
 import com.silentbit.thingshubmobile.R
 import com.silentbit.thingshubmobile.data.DataStoreManager
-import com.silentbit.thingshubmobile.data.FirebaseAdmin
+import com.silentbit.thingshubmobile.data.firebase.FirebaseAdmin
 import com.silentbit.thingshubmobile.databinding.FragDataServerBinding
 import com.silentbit.thingshubmobile.support.LayoutLinearProvider
 import com.silentbit.thingshubmobile.support.SpanBuilder
@@ -71,44 +70,56 @@ class FragDataServer : Fragment() {
 
         lifecycleScope.launch(Dispatchers.IO) {
             val fbCredentials = dataStoreManager.loadFirebaseCredentials()
-            withContext(Dispatchers.Main){
+            withContext(Dispatchers.Main) {
 
                 binding.linearLayoutCardServer.addView(
-                    textViewBuilder.getSubTitle(requireContext(), getString(R.string.application_id),true),
-                    layoutLinearProvider.getWraps(8,0)
+                    textViewBuilder.getSubTitle(
+                        requireContext(),
+                        getString(R.string.application_id),
+                        true
+                    ),
+                    layoutLinearProvider.getWraps(8, 0)
                 )
 
                 binding.linearLayoutCardServer.addView(
                     textViewBuilder.getText(requireContext(), fbCredentials.appId, true),
-                    layoutLinearProvider.getWraps(8,8,8,16)
+                    layoutLinearProvider.getWraps(8, 8, 8, 16)
                 )
 
                 binding.linearLayoutCardServer.addView(
-                    textViewBuilder.getSubTitle(requireContext(), getString(R.string.database_url),true),
-                    layoutLinearProvider.getWraps(8,8,8,0)
+                    textViewBuilder.getSubTitle(
+                        requireContext(),
+                        getString(R.string.database_url),
+                        true
+                    ),
+                    layoutLinearProvider.getWraps(8, 8, 8, 0)
                 )
 
                 binding.linearLayoutCardServer.addView(
                     textViewBuilder.getText(requireContext(), fbCredentials.databaseUrl, true),
-                    layoutLinearProvider.getWraps(8,8,8,16)
+                    layoutLinearProvider.getWraps(8, 8, 8, 16)
                 )
 
                 binding.linearLayoutCardServer.addView(
-                    textViewBuilder.getSubTitle(requireContext(), getString(R.string.api_key),true),
-                    layoutLinearProvider.getWraps(8,8,8,0)
+                    textViewBuilder.getSubTitle(
+                        requireContext(),
+                        getString(R.string.api_key),
+                        true
+                    ),
+                    layoutLinearProvider.getWraps(8, 8, 8, 0)
                 )
 
                 val showApi = textViewBuilder.getText(requireContext(), "[Show]", false)
                 showApi.text = spanBuilder.getSpannableUnder("[Show]")
-                showApi.setPadding(0,8,32,16)
-                showApi.setOnClickListener{
-                    if (showApi.text.toString() == "[Show]"){
+                showApi.setPadding(0, 8, 32, 16)
+                showApi.setOnClickListener {
+                    if (showApi.text.toString() == "[Show]") {
                         showFirebaseAuthDialog(showApi)
                     }
                 }
                 binding.linearLayoutCardServer.addView(
                     showApi,
-                    layoutLinearProvider.getWraps(8,0,0,8)
+                    layoutLinearProvider.getWraps(8, 0, 0, 8)
                 )
 
             }
@@ -120,10 +131,10 @@ class FragDataServer : Fragment() {
         val dialogView = inflater.inflate(R.layout.request_password, null)
 
         MaterialAlertDialogBuilder(requireContext())
-            .setTitle("Requiere autenticación")
-            .setMessage("Ingrese la contraseña del usuario administrador")
+            .setTitle(getString(R.string.authentication_required))
+            .setMessage(getString(R.string.enter_admin_password))
             .setView(dialogView)
-            .setPositiveButton("Done"){ dialog, _ ->
+            .setPositiveButton(getString(R.string.done)){ dialog, _ ->
 
                 val inputPassword = dialogView.findViewById<TextInputEditText>(R.id.txtDialogFirebaseAuthPassword)
 
@@ -133,11 +144,7 @@ class FragDataServer : Fragment() {
                         val mail = credentials.mail
                         withContext(Dispatchers.Main){
 
-                            val authApp = if (FirebaseApp.getApps(requireContext()).isEmpty()){
-                                Firebase.auth(dataStoreManager.loadFirebaseApp())
-                            }else{
-                                Firebase.auth(FirebaseApp.getInstance("Primary"))
-                            }
+                            val authApp = Firebase.auth(dataStoreManager.loadFirebaseApp())
 
                             authApp.signInWithEmailAndPassword(mail,inputPassword.text.toString()).addOnCompleteListener {task ->
                                 if (task.isSuccessful){

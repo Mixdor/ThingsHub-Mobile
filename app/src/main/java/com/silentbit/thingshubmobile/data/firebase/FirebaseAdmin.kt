@@ -1,4 +1,4 @@
-package com.silentbit.thingshubmobile.data
+package com.silentbit.thingshubmobile.data.firebase
 
 import android.content.Context
 import com.google.firebase.Firebase

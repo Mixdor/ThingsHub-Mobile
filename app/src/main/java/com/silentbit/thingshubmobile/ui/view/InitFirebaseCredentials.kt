@@ -11,7 +11,7 @@ import com.google.firebase.auth.auth
 import com.google.firebase.database.database
 import com.silentbit.thingshubmobile.R
 import com.silentbit.thingshubmobile.data.DataStoreManager
-import com.silentbit.thingshubmobile.data.FirebaseAdmin
+import com.silentbit.thingshubmobile.data.firebase.FirebaseAdmin
 import com.silentbit.thingshubmobile.databinding.InitFirebaseCredentialsBinding
 import com.silentbit.thingshubmobile.support.UiSupport
 import com.silentbit.thingshubmobile.ui.MainActivity
@@ -28,7 +28,7 @@ class InitFirebaseCredentials : AppCompatActivity() {
     lateinit var binding : InitFirebaseCredentialsBinding
     @Inject lateinit var dataStoreManager : DataStoreManager
     @Inject lateinit var uiSupport : UiSupport
-    @Inject lateinit var firebaseAdmin :FirebaseAdmin
+    @Inject lateinit var firebaseAdmin : FirebaseAdmin
 
     private lateinit var apiKey : String
     private lateinit var idApp : String

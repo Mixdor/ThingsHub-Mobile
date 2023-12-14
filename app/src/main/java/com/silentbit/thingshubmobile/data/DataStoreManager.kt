@@ -5,8 +5,10 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import com.google.firebase.Firebase
+import com.google.firebase.FirebaseApp
 import com.google.firebase.FirebaseOptions
 import com.google.firebase.initialize
+import com.silentbit.thingshubmobile.data.firebase.FirebaseCredentialsProfile
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
@@ -20,12 +22,17 @@ class DataStoreManager @Inject constructor(
     private val datastore = context.datastore
     suspend fun loadFirebaseApp() = datastore.data.map { prefer ->
 
-        val options = FirebaseOptions.Builder()
-            .setApiKey(prefer[stringPreferencesKey("apiKey")] ?: "")
-            .setApplicationId(prefer[stringPreferencesKey("appId")] ?: "")
-            .setDatabaseUrl(prefer[stringPreferencesKey("databaseUrl")] ?: "")
+        if (FirebaseApp.getApps(context).isEmpty()){
+            val options = FirebaseOptions.Builder()
+                .setApiKey(prefer[stringPreferencesKey("apiKey")] ?: "")
+                .setApplicationId(prefer[stringPreferencesKey("appId")] ?: "")
+                .setDatabaseUrl(prefer[stringPreferencesKey("databaseUrl")] ?: "")
 
-        Firebase.initialize(context, options.build(), "Primary")
+            Firebase.initialize(context, options.build(), "Primary")
+        }else{
+            FirebaseApp.getInstance("Primary")
+        }
+
     }.first()
 
     suspend fun loadFirebaseCredentials() = datastore.data.map { prefer ->

@@ -5,6 +5,7 @@
     <!--General-->
     <string name="next">Siguiente</string>
     <string name="skip">Omitir</string>
+    <string name="manager_iot">Gestor IoT</string>
 
     <!--Select Server-->
     <string name="select_server_type">Selecciona el tipo de servidor que tengas</string>
@@ -61,9 +62,48 @@
     <string name="example_application_id">Ejemplo de Application ID</string>
     <string name="example_database_url">Ejemplo de URL de la Base de Datos</string>
 
+    <string name="authentication_required">Autenticación Requerida</string>
+    <string name="enter_admin_password">Ingresa la Contraseña del Administrador</string>
+    <string name="done">Listo</string>
+
     <!--Bold-->
     <string name="compilation">Compilación</string>
     <string name="rules">Reglas</string>
 
+    <string name="devices">Dispositivos</string>
+    <string name="actuators">Actuadores</string>
+    <string name="sensors">Sensores</string>
+    <string name="dashboard">Tablero</string>
+    <string name="data_server">Servidor de Datos</string>
+
+
+    <!--CRUD-->
+    <string name="add">Agregar</string>
+    <string name="edit">Editar</string>
+    <string name="remove">Eliminar</string>
+
+    <string name="identifier">Identificador</string>
+    <string name="name">Nombre</string>
+    <string name="optional_description">Descripción (Opcional)</string>
+
+
+    <!--Card Device-->
+    <string name="number_of_sensors">Número de Sensores</string>
+    <string name="number_of_actuators">Número de Actuadores</string>
+
+    <string name="warning">Advertencia</string>
+    <string name="delete_data_warning">Estás a punto de eliminar todos los datos asociados con los siguientes dispositivos</string>
+    <string name="delete_devices">Eliminar Dispositivos</string>
+
+
+    <!--New Device-->
+    <string name="new_device">Nuevo Dispositivo</string>
+    <string name="add_new_device">Agregar Nuevo Dispositivo</string>
+    <string name="create_new_device_and_link">Crear un nuevo dispositivo, después puedes añadirle sensores y actuadores</string>
+
+    <!--Edit Device-->
+    <string name="edit_device">Editar Dispositivo</string>
+    <string name="apply_changes">Aplicar Cambios</string>
+    <string name="modify_device_properties">Modifica las propiedades de tu dispositivo</string>
 
 </resources>

@@ -8,31 +8,43 @@
     <fragment
         android:id="@+id/fragDashboard"
         android:name="com.silentbit.thingshubmobile.ui.view.FragDashboard"
-        android:label="Dashboard"
+        android:label="@string/dashboard"
         tools:layout="@layout/frag_dashboard" />
     <fragment
         android:id="@+id/fragDataServer"
         android:name="com.silentbit.thingshubmobile.ui.view.FragDataServer"
-        android:label="Data Server"
+        android:label="@string/data_server"
         tools:layout="@layout/frag_data_server" />
     <fragment
         android:id="@+id/fragDevice"
         android:name="com.silentbit.thingshubmobile.ui.view.FragDevice"
-        android:label="Devices"
-        tools:layout="@layout/frag_device" />
+        android:label="@string/devices"
+        tools:layout="@layout/frag_device">
+        <action
+            android:id="@+id/action_fragDevice_to_fragDeviceAdd"
+            app:destination="@id/fragDeviceAdd" />
+        <action
+            android:id="@+id/action_fragDevice_to_fragDeviceEdit"
+            app:destination="@id/fragDeviceEdit" />
+    </fragment>
     <fragment
         android:id="@+id/fragSensors"
         android:name="com.silentbit.thingshubmobile.ui.view.FragSensors"
-        android:label="Sensors"
+        android:label="@string/sensors"
         tools:layout="@layout/frag_sensors" />
     <fragment
         android:id="@+id/fragActuators"
         android:name="com.silentbit.thingshubmobile.ui.view.FragActuators"
-        android:label="Actuators"
+        android:label="@string/actuators"
         tools:layout="@layout/frag_actuators" />
     <fragment
-        android:id="@+id/fragInitSelecDataserver"
-        android:name="com.silentbit.thingshubmobile.FragInitSelecDataserver"
-        android:label="Select Data Server"
-        tools:layout="@layout/frag_init_selec_dataserver" />
+        android:id="@+id/fragDeviceAdd"
+        android:name="com.silentbit.thingshubmobile.ui.view.FragDeviceAdd"
+        android:label="@string/new_device"
+        tools:layout="@layout/frag_device_add" />
+    <fragment
+        android:id="@+id/fragDeviceEdit"
+        android:name="com.silentbit.thingshubmobile.ui.view.FragDeviceEdit"
+        android:label="@string/edit_device"
+        tools:layout="@layout/frag_device_edit" />
 </navigation>

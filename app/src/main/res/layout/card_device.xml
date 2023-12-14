@@ -2,12 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <com.google.android.material.card.MaterialCardView
-        style="@style/Widget.Material3.CardView.Filled"
+        android:id="@+id/card_device_root"
+        style="@style/Widget.Material3.CardView.Elevated"
+        android:clickable="true"
+        android:focusable="true"
+        android:checkable="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -16,54 +21,71 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/card_device_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Device1"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="?attr/colorOnPrimaryContainer"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Device1" />
 
             <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
+                android:id="@+id/card_device_description"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:text="Description"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:text="4"
-                app:chipIcon="@drawable/menu_sensors_24"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                app:layout_constraintTop_toBottomOf="@+id/card_device_title"
+                tools:text="Description" />
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip2"
+                android:id="@+id/card_device_sensors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:text="2"
+                android:contentDescription="@string/number_of_sensors"
+                app:chipIcon="@drawable/menu_sensors_24"
+                app:chipIconTint="?attr/colorOnPrimaryContainer"
+                app:chipStrokeColor="?attr/colorPrimary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_device_description" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/card_device_actuators"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/number_of_actuators"
                 app:chipIcon="@drawable/menu_actuators_24"
-                app:layout_constraintStart_toEndOf="@+id/chip"
-                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                app:chipIconTint="?attr/colorOnPrimaryContainer"
+                app:chipStrokeColor="?attr/colorPrimary"
+                app:layout_constraintStart_toEndOf="@+id/card_device_sensors"
+                app:layout_constraintTop_toBottomOf="@+id/card_device_description" />
+
+            <TextView
+                android:id="@+id/card_device_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/card_device_title"
+                app:layout_constraintStart_toEndOf="@+id/card_device_title"
+                app:layout_constraintTop_toTopOf="@+id/card_device_title"
+                tools:text="#1244" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="8dp"
-        android:layout_weight="1" />
+        android:layout_height="8dp" />
 
 </LinearLayout>

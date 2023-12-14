@@ -10,25 +10,37 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ScrollView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerDevices"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            android:padding="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/loadingDevices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabDeviceAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:clickable="true"
-            android:contentDescription="Add"
+            android:contentDescription="@string/add"
             android:focusable="true"
             android:src="@drawable/baseline_add_24"
-            android:text="Add Device"
             app:fabCustomSize="56dp"
             app:icon="@drawable/baseline_add_24"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -38,29 +50,31 @@
             android:id="@+id/fabDeviceEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="16dp"
             android:clickable="true"
-            android:contentDescription="Edit"
+            android:contentDescription="@string/edit"
             android:focusable="true"
             android:src="@drawable/baseline_edit_24"
+            android:visibility="gone"
             app:fabCustomSize="40dp"
             app:layout_constraintBottom_toTopOf="@+id/fabDeviceAdd"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="@+id/fabDeviceAdd"
+            app:layout_constraintStart_toStartOf="@+id/fabDeviceAdd" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabDeviceDelete"
+            android:id="@+id/fabDeviceRemove"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:clickable="true"
-            android:contentDescription="Delete"
+            android:contentDescription="@string/remove"
+            android:focusable="true"
             android:src="@drawable/baseline_delete_24"
+            android:visibility="gone"
             app:fabCustomSize="40dp"
             app:layout_constraintBottom_toTopOf="@+id/fabDeviceEdit"
             app:layout_constraintEnd_toEndOf="@+id/fabDeviceEdit"
-            app:layout_constraintStart_toStartOf="@+id/fabDeviceEdit"
-            android:focusable="true" />
+            app:layout_constraintStart_toStartOf="@+id/fabDeviceEdit" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

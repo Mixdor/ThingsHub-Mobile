@@ -4,25 +4,25 @@
         android:id="@+id/item_dashboard"
         android:checkable="true"
         android:icon="@drawable/menu_dashboard_24"
-        android:title="Dashboard" />
+        android:title="@string/dashboard" />
     <item
         android:id="@+id/item_data_server"
         android:checkable="true"
         android:icon="@drawable/menu_server_24"
-        android:title="Data Server" />
+        android:title="@string/data_server" />
     <item
         android:id="@+id/item_devices"
         android:checkable="true"
         android:icon="@drawable/menu_microcontroler_24"
-        android:title="Devices" />
+        android:title="@string/devices" />
     <item
         android:id="@+id/item_sensors"
         android:checkable="true"
         android:icon="@drawable/menu_sensors_24"
-        android:title="Sensors" />
+        android:title="@string/sensors" />
     <item
         android:id="@+id/item_actuators"
         android:checkable="true"
         android:icon="@drawable/menu_actuators_24"
-        android:title="Actuators" />
+        android:title="@string/actuators" />
 </menu>

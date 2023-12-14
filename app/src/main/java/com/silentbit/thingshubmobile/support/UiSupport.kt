@@ -1,11 +1,14 @@
 package com.silentbit.thingshubmobile.support
 
 import android.app.Activity
+import android.content.Context
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.silentbit.thingshubmobile.R
+import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
 class UiSupport @Inject constructor(
+    @ApplicationContext val context: Context,
     private val spanBuilder : SpanBuilder
 ){
 
@@ -14,7 +17,7 @@ class UiSupport @Inject constructor(
             .setIcon(R.drawable.baseline_warning_amber_24)
             .setTitle(title)
             .setMessage(message)
-            .setPositiveButton("OK") { dialog, _ ->
+            .setPositiveButton(context.getString(R.string.ok)) { dialog, _ ->
                 dialog.dismiss()
             }
             .show()
@@ -30,7 +33,7 @@ class UiSupport @Inject constructor(
             .setTitle(title)
             .setMessage(spanMessage)
             .setView(extraLayout)
-            .setPositiveButton("OK") { dialog, _ ->
+            .setPositiveButton(context.getString(R.string.ok)) { dialog, _ ->
                 dialog.dismiss()
             }
             .show()

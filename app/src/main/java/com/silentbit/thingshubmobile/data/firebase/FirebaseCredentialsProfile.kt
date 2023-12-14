@@ -1,4 +1,4 @@
-package com.silentbit.thingshubmobile.data
+package com.silentbit.thingshubmobile.data.firebase
 
 data class FirebaseCredentialsProfile(
     val apiKey : String,
