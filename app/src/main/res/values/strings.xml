@@ -122,4 +122,7 @@
     <string name="modify_device_properties">Modify your device\'s properties</string>
 
 
+    <string name="test" translatable="false"><![CDATA[≤ x >]]></string>
+
+
 </resources>

@@ -11,41 +11,75 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerSensors"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingHorizontal="4dp"
+            android:paddingVertical="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/loadingSensors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton4"
+            android:id="@+id/fabSensorAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:clickable="true"
-            android:contentDescription="Add"
+            android:contentDescription="@string/add"
+            android:focusable="true"
             android:src="@drawable/baseline_add_24"
+            app:fabCustomSize="56dp"
+            app:icon="@drawable/baseline_add_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton5"
+            android:id="@+id/fabSensorEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:clickable="true"
-            android:contentDescription="Edit"
+            android:contentDescription="@string/edit"
+            android:focusable="true"
             android:src="@drawable/baseline_edit_24"
-            app:layout_constraintBottom_toTopOf="@+id/floatingActionButton4"
-            app:layout_constraintEnd_toEndOf="@+id/floatingActionButton4"
-            app:layout_constraintStart_toStartOf="@+id/floatingActionButton4" />
+            android:visibility="gone"
+            app:fabCustomSize="40dp"
+            app:layout_constraintBottom_toTopOf="@+id/fabSensorAdd"
+            app:layout_constraintEnd_toEndOf="@+id/fabSensorAdd"
+            app:layout_constraintStart_toStartOf="@+id/fabSensorAdd"
+            tools:visibility="visible" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton6"
+            android:id="@+id/fabSensorRemove"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:clickable="true"
-            android:contentDescription="Delete"
+            android:contentDescription="@string/remove"
+            android:focusable="true"
             android:src="@drawable/baseline_delete_24"
-            app:layout_constraintBottom_toTopOf="@+id/floatingActionButton5"
-            app:layout_constraintEnd_toEndOf="@+id/floatingActionButton5"
-            app:layout_constraintStart_toStartOf="@+id/floatingActionButton5" />
+            android:visibility="gone"
+            app:fabCustomSize="40dp"
+            app:layout_constraintBottom_toTopOf="@+id/fabSensorEdit"
+            app:layout_constraintEnd_toEndOf="@+id/fabSensorEdit"
+            app:layout_constraintStart_toStartOf="@+id/fabSensorEdit"
+            tools:visibility="visible" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

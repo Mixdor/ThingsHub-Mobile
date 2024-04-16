@@ -16,7 +16,7 @@ import com.silentbit.thingshubmobile.R
 import com.silentbit.thingshubmobile.data.DataStoreManager
 import com.silentbit.thingshubmobile.data.firebase.FirebaseBackend
 import com.silentbit.thingshubmobile.databinding.FragDeviceBinding
-import com.silentbit.thingshubmobile.domain.GetDevicesCase
+import com.silentbit.thingshubmobile.domain.GetDevicesListenerCase
 import com.silentbit.thingshubmobile.domain.objs.ObjDevice
 import com.silentbit.thingshubmobile.ui.adapters.AdapterDevice
 import com.silentbit.thingshubmobile.ui.viewmodel.ViewModelDevice
@@ -35,7 +35,7 @@ class FragDevice : Fragment() {
 
     @Inject lateinit var dataStoreManager : DataStoreManager
     @Inject lateinit var firebaseBackend: FirebaseBackend
-    @Inject lateinit var getDevicesCase: GetDevicesCase
+    @Inject lateinit var getDevicesCase: GetDevicesListenerCase
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

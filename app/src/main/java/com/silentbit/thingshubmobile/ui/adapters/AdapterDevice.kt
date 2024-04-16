@@ -1,6 +1,5 @@
 package com.silentbit.thingshubmobile.ui.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -58,14 +57,6 @@ class AdapterDevice(
         }
     }
 
-    fun updateData(newData: List<ObjDevice>):Boolean{
-        val diffUtil = DeviceDiffUtil(data,newData)
-        val calcule = DiffUtil.calculateDiff(diffUtil)
-        data = newData
-        calcule.dispatchUpdatesTo(this)
-        return true
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeviceViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.card_device, parent, false)
@@ -104,8 +95,16 @@ class AdapterDevice(
                 fragBinding.fabDeviceEdit.visibility = View.GONE
                 fragBinding.fabDeviceRemove.visibility = View.GONE
             }
-            Log.e("Checkeds", dataChecked.toString())
+
         }
+    }
+
+    fun updateData(newData: List<ObjDevice>):Boolean{
+        val diffUtil = DeviceDiffUtil(data,newData)
+        val calculate = DiffUtil.calculateDiff(diffUtil)
+        data = newData
+        calculate.dispatchUpdatesTo(this)
+        return true
     }
 
     override fun getItemCount(): Int = data.size
