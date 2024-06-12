@@ -17,22 +17,10 @@
             android:name=".ui.view.InitFirebaseInstructions"
             android:exported="false" />
         <activity
-            android:name=".ui.view.InitRegister"
-            android:exported="false" />
-        <activity
-            android:name=".ui.view.InitUsers"
-            android:exported="false" />
-        <activity
             android:name=".ui.view.InitFirebaseCredentials"
             android:exported="false" />
         <activity
-            android:name=".ui.view.InitHelpFirebaseDatabase"
-            android:exported="false" />
-        <activity
             android:name=".ui.view.InitSelecDataserver"
-            android:exported="false" />
-        <activity
-            android:name=".ui.view.InitHelpFirebase"
             android:exported="false" />
         <activity
             android:name=".ui.MainActivity"
@@ -43,6 +31,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

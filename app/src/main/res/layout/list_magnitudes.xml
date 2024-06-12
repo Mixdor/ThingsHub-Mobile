@@ -14,9 +14,7 @@
         android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/textView8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView8"
-        app:srcCompat="@drawable/baseline_delete_24"
-        app:tint="?attr/colorOnPrimaryContainer" />
+        app:layout_constraintTop_toTopOf="@+id/textView8"/>
 
     <TextView
         android:id="@+id/textView8"
@@ -27,6 +25,8 @@
         android:maxLines="1"
         android:paddingVertical="16dp"
         android:textAppearance="?attr/textAppearanceTitleMedium"
+        android:textSize="16sp"
+        android:textColor="@color/image_tint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"

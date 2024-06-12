@@ -83,215 +83,8 @@
                     android:id="@+id/txtMagnitude"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Selecciona una magnitud"
+                    android:hint="@string/select_an_icon"
                     android:inputType="none" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <TextView
-                android:id="@+id/textViewRangeRegular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="Range Regular"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/magnitudeLayout" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/rangeRegularLeft"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:hint="Minimo"
-                app:layout_constraintEnd_toStartOf="@+id/btnRangeRegular"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewRangeRegular">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtrangeRegularLeft"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number|numberDecimal|numberSigned" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <Button
-                android:id="@+id/btnRangeRegular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/playpen_sans"
-                android:padding="0dp"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/rangeRegularLeft"
-                app:layout_constraintEnd_toStartOf="@+id/rangeRegularRight"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/rangeRegularLeft"
-                app:layout_constraintTop_toTopOf="@+id/rangeRegularLeft" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/rangeRegularRight"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:hint="Maximo"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/btnRangeRegular"
-                app:layout_constraintTop_toBottomOf="@+id/textViewRangeRegular">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtrangeRegularRight"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number|numberDecimal|numberSigned" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <TextView
-                android:id="@+id/textViewRangeWarning"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="Range Warning"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnRangeRegular" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/rangeWarningLeft"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:hint="Minimo"
-                app:layout_constraintEnd_toStartOf="@+id/btnRangeWarning"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewRangeWarning">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtrangeWarningLeft"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number|numberDecimal|numberSigned" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <Button
-                android:id="@+id/btnRangeWarning"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/playpen_sans"
-                android:padding="0dp"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/rangeWarningLeft"
-                app:layout_constraintEnd_toStartOf="@+id/rangeWarningRight"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/rangeWarningLeft"
-                app:layout_constraintTop_toTopOf="@+id/rangeWarningLeft" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/rangeWarningRight"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:hint="Maximo"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/btnRangeWarning"
-                app:layout_constraintTop_toBottomOf="@+id/textViewRangeWarning">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtrangeWarningRight"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number|numberDecimal|numberSigned" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <TextView
-                android:id="@+id/textViewRangeCritical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="Range Critical"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnRangeWarning" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/rangeCriticalLeft"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:hint="Minimo"
-                app:layout_constraintEnd_toStartOf="@+id/btnRangeCritical"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewRangeCritical">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtrangeCriticalLeft"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number|numberDecimal|numberSigned" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <Button
-                android:id="@+id/btnRangeCritical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/playpen_sans"
-                android:padding="0dp"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/rangeCriticalLeft"
-                app:layout_constraintEnd_toStartOf="@+id/rangeCriticalRight"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/rangeCriticalLeft"
-                app:layout_constraintTop_toTopOf="@+id/rangeCriticalLeft" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/rangeCriticalRight"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:hint="Maximo"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/btnRangeCritical"
-                app:layout_constraintTop_toBottomOf="@+id/textViewRangeCritical">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txtrangeCriticalRight"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number|numberDecimal|numberSigned" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -303,21 +96,122 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rangeCriticalLeft"
+                app:layout_constraintTop_toBottomOf="@+id/magnitudeLayout"
                 app:startIconDrawable="@drawable/menu_microcontroler_24">
 
                 <AutoCompleteTextView
                     android:id="@+id/txtDevice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Device"
+                    android:hint="@string/device"
                     android:inputType="none" />
 
             </com.google.android.material.textfield.TextInputLayout>
+
+            <CheckBox
+                android:id="@+id/checkIsPercentage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/use_percentage_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/deviceLayout" />
+
+            <CheckBox
+                android:id="@+id/checkEnableRange"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/enable_warning_ranges"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkIsPercentage" />
+
+            <LinearLayout
+                android:id="@+id/layoutRanges"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:dividerPadding="24dp"
+                android:orientation="vertical"
+                android:showDividers="middle"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkEnableRange"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/layoutRangeStable"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/normal_range"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipRangeRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/modify"
+                        android:textColor="@color/image_tint"
+                        app:chipStrokeColor="@color/subtitle"
+                        app:chipIcon="@drawable/baseline_check_box_24" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutRangeWarning"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/warning_range"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipRangeWarning"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/image_tint"
+                        android:text="@string/modify"
+                        app:chipStrokeColor="@color/subtitle"
+                        app:chipIcon="@drawable/baseline_warning_24" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnNewSensor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/create_new_sensor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutRanges" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

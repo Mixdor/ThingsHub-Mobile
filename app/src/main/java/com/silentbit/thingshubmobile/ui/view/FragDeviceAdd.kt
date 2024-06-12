@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.silentbit.thingshubmobile.R
 import com.silentbit.thingshubmobile.data.DataStoreManager
 import com.silentbit.thingshubmobile.databinding.FragDeviceAddBinding
 import com.silentbit.thingshubmobile.ui.viewmodel.ViewModelDeviceAdd
@@ -46,10 +47,10 @@ class FragDeviceAdd : Fragment() {
         viewModelDeviceAdd.isSaveDone.observe(requireActivity()){
 
             if (it){
-                Toast.makeText(context, "Guardado correctamente", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, getString(R.string.saved_successfully), Toast.LENGTH_LONG).show()
             }
             else{
-                Toast.makeText(context, "Ya existe", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, getString(R.string.already_exists), Toast.LENGTH_LONG).show()
             }
 
             binding.txtIdDevice.setText("")

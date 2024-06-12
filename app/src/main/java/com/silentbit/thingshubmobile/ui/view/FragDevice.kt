@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.silentbit.thingshubmobile.R
 import com.silentbit.thingshubmobile.data.DataStoreManager
-import com.silentbit.thingshubmobile.data.firebase.FirebaseBackend
+import com.silentbit.thingshubmobile.data.firebase.FirebaseDevice
 import com.silentbit.thingshubmobile.databinding.FragDeviceBinding
 import com.silentbit.thingshubmobile.domain.GetDevicesListenerCase
 import com.silentbit.thingshubmobile.domain.objs.ObjDevice
@@ -34,7 +34,7 @@ class FragDevice : Fragment() {
     private val binding get() = _binding!!
 
     @Inject lateinit var dataStoreManager : DataStoreManager
-    @Inject lateinit var firebaseBackend: FirebaseBackend
+    @Inject lateinit var firebaseDevice: FirebaseDevice
     @Inject lateinit var getDevicesCase: GetDevicesListenerCase
 
     override fun onCreateView(

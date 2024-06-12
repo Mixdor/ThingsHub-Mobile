@@ -1,5 +1,6 @@
 package com.silentbit.thingshubmobile.ui.view
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,10 +8,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.silentbit.thingshubmobile.R
 import com.silentbit.thingshubmobile.databinding.FragDeviceEditBinding
 import com.silentbit.thingshubmobile.domain.objs.ObjDevice
 import com.silentbit.thingshubmobile.ui.viewmodel.ViewModelDeviceEdit
 import dagger.hilt.android.AndroidEntryPoint
+import java.io.Serializable
 
 
 @AndroidEntryPoint
@@ -31,11 +34,11 @@ class FragDeviceEdit : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val device = arguments?.getSerializable("device") as ObjDevice
+        val device = arguments?.customGetSerializable<ObjDevice>("device")
 
-        binding.txtIdDevice.setText(device.id)
-        binding.txtNameDevice.setText(device.name)
-        binding.txtDescriptionDevice.setText(device.description)
+        binding.txtIdDevice.setText(device?.id)
+        binding.txtNameDevice.setText(device?.name)
+        binding.txtDescriptionDevice.setText(device?.description)
 
 
         binding.btnApplyChange.setOnClickListener {
@@ -48,16 +51,23 @@ class FragDeviceEdit : Fragment() {
         }
 
         viewModelDeviceEdit.isSaveDone.observe(requireActivity()){
-
             if (it){
-                Toast.makeText(context, "Guardado correctamente", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, getString(R.string.saved_successfully), Toast.LENGTH_LONG).show()
             }
             else{
-                Toast.makeText(context, "Ya existe", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, getString(R.string.error), Toast.LENGTH_LONG).show()
             }
-
         }
 
+    }
+
+    @Suppress("DEPRECATION")
+    private inline fun <reified T : Serializable> Bundle.customGetSerializable(key: String): T? {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            getSerializable(key, T::class.java)
+        } else {
+            getSerializable(key) as? T
+        }
     }
 
 }

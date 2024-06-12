@@ -4,15 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.silentbit.thingshubmobile.R
 import com.silentbit.thingshubmobile.data.DataStoreManager
-import com.silentbit.thingshubmobile.data.firebase.FirebaseBackend
+import com.silentbit.thingshubmobile.data.firebase.FirebaseDevice
 import com.silentbit.thingshubmobile.databinding.FragSensorsBinding
 import com.silentbit.thingshubmobile.domain.GetSensorsCase
 import com.silentbit.thingshubmobile.domain.objs.ObjSensor
@@ -32,7 +34,7 @@ class FragSensors : Fragment() {
     private val binding get() = _binding!!
 
     @Inject lateinit var dataStoreManager : DataStoreManager
-    @Inject lateinit var firebaseBackend: FirebaseBackend
+    @Inject lateinit var firebaseDevice: FirebaseDevice
     @Inject lateinit var getSensorsCase : GetSensorsCase
 
     override fun onCreateView(
@@ -92,7 +94,30 @@ class FragSensors : Fragment() {
 
         binding.fabSensorRemove.setOnClickListener {
 
-            
+            val inflater = requireActivity().layoutInflater
+            val dialogView = inflater.inflate(R.layout.to_remove, null)
+
+            val textView = dialogView.findViewById<TextView>(R.id.txtToRemove)
+            var stringToRemove = ""
+            for(sensor in sensorsAdapter.dataChecked){
+                stringToRemove += "- ${sensor.name}\n"
+            }
+            textView.text = StringBuilder(stringToRemove)
+
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle(getString(R.string.warning))
+                .setMessage("Estás a punto de eliminar todos los datos asociados con los siguientes sensores")
+                .setView(dialogView)
+                .setPositiveButton(getString(R.string.delete_devices)){ dialog, _ ->
+
+                    viewModelSensor.deleteDevice(
+                        sensorsAdapter.dataChecked,
+                        sensorsAdapter.data
+                    )
+
+                    dialog.dismiss()
+                }
+                .show()
 
         }
 

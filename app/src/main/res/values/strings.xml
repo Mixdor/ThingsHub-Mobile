@@ -5,6 +5,8 @@
     <!--General-->
     <string name="next">Next</string>
     <string name="skip">Skip</string>
+    <string name="accept">Accept</string>
+    <string name="cancel">Cancel</string>
     <string name="ok" translatable="false">OK</string>
     <string name="manager_iot">Manager IoT</string>
 
@@ -122,7 +124,36 @@
     <string name="modify_device_properties">Modify your device\'s properties</string>
 
 
-    <string name="test" translatable="false"><![CDATA[≤ x >]]></string>
+    <!--New Sensor-->
+    <string name="new_sensor">New Sensor</string>
+    <string name="select_an_icon">Select an Icon</string>
+    <string name="device">Device</string>
+    <string name="use_percentage_label">Use Percentage Label?</string>
+    <string name="enable_warning_ranges">Enable Warning Ranges</string>
+    <string name="normal_range">Normal Range</string>
+    <string name="warning_range">Warning Range</string>
+    <string name="modify">Modify</string>
+    <string name="create_new_sensor">Create New Sensor</string>
 
+    <!--Edit Sensor-->
+    <string name="edit_sensor">Edit Sensor</string>
+
+    <string name="saved_successfully">Saved Successfully</string>
+    <string name="already_exists">Already Exists</string>
+    <string name="please_complete_ranges">Please Complete the Ranges</string>
+    <string name="please_complete_all_fields">Please Complete All Fields</string>
+
+
+    <!--Dialog Range-->
+    <string name="modify_range">Modify Range</string>
+    <string name="minimum">Minimum</string>
+    <string name="maximum">Maximum</string>
+    <string name="open_limit">Open Limit</string>
+    <string name="closed_limit">Closed Limit</string>
+
+
+    <string name="test" translatable="false"><![CDATA[≤ x >]]></string>
+    <string name="symbol_percentage" translatable="false">%</string>
+    <string name="symbol_separator" translatable="false"> ━ </string>
 
 </resources>

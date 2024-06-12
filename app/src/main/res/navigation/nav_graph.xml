@@ -57,11 +57,11 @@
     <fragment
         android:id="@+id/fragSensorsAdd"
         android:name="com.silentbit.thingshubmobile.ui.view.FragSensorsAdd"
-        android:label="frag_sensors_add"
+        android:label="@string/new_sensor"
         tools:layout="@layout/frag_sensors_add" />
     <fragment
         android:id="@+id/fragSensorsEdit"
         android:name="com.silentbit.thingshubmobile.ui.view.FragSensorsEdit"
-        android:label="frag_sensors_edit"
+        android:label="@string/edit_sensor"
         tools:layout="@layout/frag_sensors_edit" />
 </navigation>

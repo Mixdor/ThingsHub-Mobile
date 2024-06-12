@@ -4,7 +4,7 @@ import android.app.Activity
 import android.content.Context
 import com.silentbit.thingshubmobile.R
 import com.silentbit.thingshubmobile.data.DataStoreManager
-import com.silentbit.thingshubmobile.data.firebase.FirebaseBackend
+import com.silentbit.thingshubmobile.data.firebase.FirebaseDevice
 import com.silentbit.thingshubmobile.ui.viewmodel.ViewModelDevice
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
@@ -16,7 +16,7 @@ import javax.inject.Inject
 class GetDevicesListenerCase @Inject constructor(
     @ApplicationContext private val context: Context,
     private val dataStoreManager : DataStoreManager,
-    private val firebaseBackend: FirebaseBackend
+    private val firebaseDevice: FirebaseDevice
 ){
     operator fun invoke(activity: Activity, viewModelDevice: ViewModelDevice) {
 
@@ -24,7 +24,7 @@ class GetDevicesListenerCase @Inject constructor(
             val typeServer = dataStoreManager.loadTypeServer()
             withContext(Dispatchers.Main){
                 when(typeServer){
-                    context.getString(R.string.firebase) -> firebaseBackend.getDevicesListener(activity, viewModelDevice)
+                    context.getString(R.string.firebase) -> firebaseDevice.getDevicesListener(activity, viewModelDevice)
                 }
             }
         }

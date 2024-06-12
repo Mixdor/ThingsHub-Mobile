@@ -11,10 +11,8 @@ import com.google.firebase.database.database
 import com.silentbit.thingshubmobile.R
 import com.silentbit.thingshubmobile.data.DataStoreManager
 import com.silentbit.thingshubmobile.domain.objs.ObjDevice
-import com.silentbit.thingshubmobile.domain.objs.ObjSensor
 import com.silentbit.thingshubmobile.support.UiSupport
 import com.silentbit.thingshubmobile.ui.viewmodel.ViewModelDevice
-import com.silentbit.thingshubmobile.ui.viewmodel.ViewModelSensor
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -23,7 +21,7 @@ import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class FirebaseBackend @Inject constructor(
+class FirebaseDevice @Inject constructor(
     private val dataStoreManager : DataStoreManager,
     private val uiSupport: UiSupport,
     @ApplicationContext val context: Context
@@ -175,73 +173,6 @@ class FirebaseBackend @Inject constructor(
             newList = newList.minus(device)
         }
         return newList
-
-    }
-
-    fun getSensors(activity: Activity, viewModelSensor: ViewModelSensor) {
-
-        CoroutineScope(Dispatchers.IO).launch {
-
-            val firebaseApp = dataStoreManager.loadFirebaseApp()
-            val uid = Firebase.auth(firebaseApp).uid.toString()
-            val reference = Firebase.database(firebaseApp).reference.child(uid).child("devices")
-
-            withContext(Dispatchers.Main) {
-
-                reference.addValueEventListener(object : ValueEventListener{
-                    override fun onDataChange(snapshot: DataSnapshot) {
-                        if (snapshot.value!=null){
-
-                            var dataSensors : List<ObjSensor> = listOf()
-
-                            val devices = snapshot.value as Map<*,*>
-                            for(deviceKey in devices.keys) {
-                                val device = devices[deviceKey] as Map<*, *>
-                                val sensors = device["sensors"] as Map<*, *>?
-
-                                if(sensors!=null){
-                                    for(sensorKey in sensors.keys){
-                                        val sensor = sensors[sensorKey] as Map<*,*>
-                                        val name = sensor["name"] as String?
-                                        val value = sensor["value"] as Long?
-                                        val nameDevice = device["name"] as String?
-
-                                        val objSensor = ObjSensor(
-                                            id = sensorKey.toString(),
-                                            name = name ?: "",
-                                            value = value ?: 0,
-                                            magnitude = 0,
-                                            isPercentage = true,
-                                            rangeRegular = "",
-                                            rangeWarning = "",
-                                            rangeCritical = "",
-                                            idDevice = deviceKey.toString(),
-                                            nameDevice = nameDevice.toString()
-                                        )
-                                        dataSensors = dataSensors.plus(objSensor)
-                                    }
-                                }
-                            }
-                            viewModelSensor.getSensors(dataSensors)
-                        }
-                        else{
-                            viewModelSensor.getSensors(emptyList())
-                        }
-                    }
-
-                    override fun onCancelled(error: DatabaseError) {
-                        uiSupport.showErrorAlertDialog(
-                            activity,
-                            activity.getString(R.string.error),
-                            error.toString()
-                        )
-                    }
-
-                })
-
-            }
-
-        }
 
     }
 

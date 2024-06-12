@@ -3,20 +3,19 @@ package com.silentbit.thingshubmobile.domain
 import android.content.Context
 import com.silentbit.thingshubmobile.R
 import com.silentbit.thingshubmobile.data.DataStoreManager
-import com.silentbit.thingshubmobile.data.firebase.FirebaseDevice
-import com.silentbit.thingshubmobile.domain.objs.ObjDevice
+import com.silentbit.thingshubmobile.data.firebase.FirebaseSensor
+import com.silentbit.thingshubmobile.domain.objs.ObjSensor
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
-class RemoveDeviceCase @Inject constructor(
+class RemoveSensorCase @Inject constructor(
     @ApplicationContext private val context: Context,
     private val dataStoreManager: DataStoreManager,
-    private val firebaseDevice: FirebaseDevice
+    private val firebaseSensor: FirebaseSensor
 ) {
-
-    suspend operator fun invoke(listRemove:List<ObjDevice>, oldList: List<ObjDevice>) : List<ObjDevice>{
+    suspend operator fun invoke(listRemove:List<ObjSensor>, oldList: List<ObjSensor>) : List<ObjSensor>{
         return when(dataStoreManager.loadTypeServer()){
-            context.getString(R.string.firebase) -> firebaseDevice.removeDevice(listRemove, oldList)
+            context.getString(R.string.firebase) -> firebaseSensor.removeSensor(listRemove, oldList)
             else -> emptyList()
         }
     }

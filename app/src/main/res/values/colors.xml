@@ -7,6 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="error">#BA1A1A</color>
+    <color name="outline">@color/md_theme_light_outline</color>
+    <color name="primary">#00696A</color>
+    <color name="subtitle">@color/md_theme_light_onPrimaryContainer</color>
+    <color name="image_tint">@color/md_theme_light_onSurfaceVariant</color>
+
     
     <color name="teal">#FF007F80</color>
     <color name="persian_green">#FF00A895</color>
@@ -17,7 +24,7 @@
     <color name="seed">#007F80</color>
     <color name="md_theme_light_primary">#00696A</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>
-    <color name="md_theme_light_primaryContainer">#6FF6F8</color>
+    <color name="md_theme_light_primaryContainer">#5EB0B1</color>
     <color name="md_theme_light_onPrimaryContainer">#002020</color>
     <color name="md_theme_light_secondary">#4A6363</color>
     <color name="md_theme_light_onSecondary">#FFFFFF</color>
@@ -48,7 +55,7 @@
     <color name="md_theme_dark_primary">#348687</color>
     <color name="md_theme_dark_onPrimary">#003737</color>
     <color name="md_theme_dark_primaryContainer">#004F50</color>
-    <color name="md_theme_dark_onPrimaryContainer">#6FF6F8</color>
+    <color name="md_theme_dark_onPrimaryContainer">#6D9590</color>
     <color name="md_theme_dark_secondary">#B0CCCB</color>
     <color name="md_theme_dark_onSecondary">#1B3435</color>
     <color name="md_theme_dark_secondaryContainer">#324B4B</color>
@@ -63,7 +70,7 @@
     <color name="md_theme_dark_onErrorContainer">#FFDAD6</color>
     <color name="md_theme_dark_background">#191C1C</color>
     <color name="md_theme_dark_onBackground">#E0E3E2</color>
-    <color name="md_theme_dark_surface">#191C1C</color>
+    <color name="md_theme_dark_surface">#212525</color>
     <color name="md_theme_dark_onSurface">#E0E3E2</color>
     <color name="md_theme_dark_surfaceVariant">#3F4948</color>
     <color name="md_theme_dark_onSurfaceVariant">#BEC8C8</color>

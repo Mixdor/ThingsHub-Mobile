@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.Filter
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import com.silentbit.thingshubmobile.R
 import com.silentbit.thingshubmobile.domain.objs.ObjMagnitude
 
@@ -29,7 +30,7 @@ class ArrayAdapterMagnitude(
         val item : ObjMagnitude = magnitudes[position]
 
         textView.text = item.name
-        imageView.setImageResource(item.idImage)
+        imageView.setImageDrawable(ContextCompat.getDrawable(context, item.idImage))
 
         return view
     }

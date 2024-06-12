@@ -1,9 +1,11 @@
 package com.silentbit.thingshubmobile.ui.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -30,19 +32,53 @@ class AdapterSensors(
         var idDevice = binding.cardSensorDevice
 
         fun render(sensorItem:ObjSensor){
-            id.text = sensorItem.id
+
+            val context = idDevice.context
+
+            sensorItem.id.also { id.text = it }
             name.text = sensorItem.name
             value.text = sensorItem.value.toString()
             isPercentage.isVisible = sensorItem.isPercentage
             idDevice.text = sensorItem.idDevice
 
             idDevice.setOnClickListener {
-                val context = idDevice.context
+
                 Toast.makeText(
                     context,
                     sensorItem.nameDevice,
                     Toast.LENGTH_SHORT
                 ).show()
+            }
+
+            Log.e(":::::", sensorItem.magnitude.toString())
+
+            when(sensorItem.magnitude.toInt()){
+                0 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.baseline_air_24))}
+                1 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.outline_device_thermostat_24))}
+                2 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.outline_humidity_mid_24))}
+                3 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.outline_infrared_24))}
+                4 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.rounded_altitude_24))}
+                5 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.outline_water_ph_24))}
+                6 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.outline_weight_24))}
+                7 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.baseline_volume_up_24))}
+                8 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.baseline_sunny_24))}
+                9 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.baseline_palette_24))}
+                10 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.baseline_access_time_24))}
+                11 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.baseline_compress_24))}
+                12 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.outline_expand_24))}
+                13 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.baseline_electric_bolt_24))}
+                14 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.baseline_my_location_24))}
+                15 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.baseline_radar_24))}
+                16 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.baseline_touch_app_24))}
+                17 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.baseline_visibility_24))}
+                18 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.outline_speed_24))}
+                19 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.outline_height_24))}
+                20 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.outline_width_24))}
+                21 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.outline_total_dissolved_solids_24))}
+                22 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.baseline_cyclone_24))}
+                23 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.outline_detector_smoke_24))}
+                24 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.outline_water_medium_24))}
+                else -> {Log.e("Sensor", "No found icon")}
             }
 
         }

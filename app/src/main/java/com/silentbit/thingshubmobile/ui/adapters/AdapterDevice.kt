@@ -30,7 +30,7 @@ class AdapterDevice(
         fun render(deviceItem:ObjDevice){
 
             title.text = deviceItem.name
-            id.text = StringBuilder("#${deviceItem.id}")
+            id.text = StringBuilder(deviceItem.id)
             if (deviceItem.description == "") description.visibility = View.GONE
             else description.text = deviceItem.description
             sensors.text = deviceItem.sensors.toString()

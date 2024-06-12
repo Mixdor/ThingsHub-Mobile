@@ -8,9 +8,9 @@ data class ObjSensor(
     var value : Long,
     var magnitude : Long,
     var isPercentage : Boolean,
+    var isEnableRanges : Boolean,
     var rangeRegular : String,
     var rangeWarning : String,
-    var rangeCritical : String,
     val idDevice : String,
     val nameDevice : String
 ): Serializable

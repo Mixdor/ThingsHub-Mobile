@@ -5,6 +5,8 @@
     <!--General-->
     <string name="next">Siguiente</string>
     <string name="skip">Omitir</string>
+    <string name="accept">Aceptar</string>
+    <string name="cancel">Cancelar</string>
     <string name="manager_iot">Gestor IoT</string>
 
     <!--Select Server-->
@@ -105,5 +107,35 @@
     <string name="edit_device">Editar Dispositivo</string>
     <string name="apply_changes">Aplicar Cambios</string>
     <string name="modify_device_properties">Modifica las propiedades de tu dispositivo</string>
+
+
+    <!--New Sensor-->
+    <string name="new_sensor">Nuevo Sensor</string>
+    <string name="select_an_icon">Selecciona un Icono</string>
+    <string name="device">Dispositivo</string>
+    <string name="use_percentage_label">¿Usar Etiqueta de Porcentaje?</string>
+    <string name="enable_warning_ranges">Habilitar Rangos de Advertencia</string>
+    <string name="normal_range">Rango Normal</string>
+    <string name="warning_range">Rango de Advertencia</string>
+    <string name="modify">Modificar</string>
+    <string name="create_new_sensor">Crear Nuevo Sensor</string>
+
+    <!--Edit Sensor-->
+    <string name="edit_sensor">Editar Sensor</string>
+
+    <string name="saved_successfully">Guardado Correctamente</string>
+    <string name="already_exists">Ya Existe</string>
+    <string name="please_complete_ranges">Por favor, complete los rangos</string>
+    <string name="please_complete_all_fields">Por favor, complete todos los campos</string>
+
+
+    <!--Dialog Range-->
+    <string name="modify_range">Modificar Rango</string>
+    <string name="minimum">Mínimo</string>
+    <string name="maximum">Máximo</string>
+    <string name="open_limit">Limite Abierto</string>
+    <string name="closed_limit">Limite Cerrado</string>
+
+
 
 </resources>
