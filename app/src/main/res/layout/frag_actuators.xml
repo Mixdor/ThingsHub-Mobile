@@ -11,41 +11,72 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerActuators"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingHorizontal="4dp"
+            android:paddingVertical="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/loadingActuators"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton7"
+            android:id="@+id/fabActuatorAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:clickable="true"
-            android:contentDescription="Add"
+            android:contentDescription="@string/add"
+            android:focusable="true"
             android:src="@drawable/baseline_add_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton8"
+            android:id="@+id/fabActuatorEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:clickable="true"
-            android:contentDescription="Edit"
+            android:contentDescription="@string/edit"
+            android:focusable="true"
             android:src="@drawable/baseline_edit_24"
-            app:layout_constraintBottom_toTopOf="@+id/floatingActionButton7"
-            app:layout_constraintEnd_toEndOf="@+id/floatingActionButton7"
-            app:layout_constraintStart_toStartOf="@+id/floatingActionButton7" />
+            android:visibility="gone"
+            app:fabCustomSize="40dp"
+            app:layout_constraintBottom_toTopOf="@+id/fabActuatorAdd"
+            app:layout_constraintEnd_toEndOf="@+id/fabActuatorAdd"
+            app:layout_constraintStart_toStartOf="@+id/fabActuatorAdd"
+            tools:visibility="visible" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton9"
+            android:id="@+id/fabActuatorRemove"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:clickable="true"
-            android:contentDescription="Delete"
+            android:contentDescription="@string/remove"
+            android:focusable="true"
             android:src="@drawable/baseline_delete_24"
-            app:layout_constraintBottom_toTopOf="@+id/floatingActionButton8"
-            app:layout_constraintEnd_toEndOf="@+id/floatingActionButton8"
-            app:layout_constraintStart_toStartOf="@+id/floatingActionButton8" />
+            android:visibility="gone"
+            app:fabCustomSize="40dp"
+            app:layout_constraintBottom_toTopOf="@+id/fabActuatorEdit"
+            app:layout_constraintEnd_toEndOf="@+id/fabActuatorEdit"
+            app:layout_constraintStart_toStartOf="@+id/fabActuatorEdit"
+            tools:visibility="visible" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

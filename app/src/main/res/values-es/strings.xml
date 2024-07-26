@@ -108,6 +108,8 @@
     <string name="apply_changes">Aplicar Cambios</string>
     <string name="modify_device_properties">Modifica las propiedades de tu dispositivo</string>
 
+    <!-- Card Sensor -->
+    <string name="delete_sensors">Eliminar sensores</string>
 
     <!--New Sensor-->
     <string name="new_sensor">Nuevo Sensor</string>
@@ -122,12 +124,24 @@
 
     <!--Edit Sensor-->
     <string name="edit_sensor">Editar Sensor</string>
+    <string name="delete_sensors_data_confirmation">Estás a punto de eliminar todos los datos asociados con los siguientes sensores.</string>
 
     <string name="saved_successfully">Guardado Correctamente</string>
     <string name="already_exists">Ya Existe</string>
     <string name="please_complete_ranges">Por favor, complete los rangos</string>
     <string name="please_complete_all_fields">Por favor, complete todos los campos</string>
 
+    <!-- Card Actuator -->
+    <string name="delete_actuators">Eliminar actuatores</string>
+
+    <!--New Actuator-->
+    <string name="create_new_actuator">Crear nuevo actuator</string>
+    <string name="toggle">Interruptor</string>
+
+    <!--Edit Actuator-->
+    <string name="edit_actuator">Edit actuator</string>
+    <string name="type">Tipo</string>
+    <string name="delete_actuators_data_confirmation">Estás a punto de eliminar todos los datos asociados con los siguientes actuadores.</string>
 
     <!--Dialog Range-->
     <string name="modify_range">Modificar Rango</string>
@@ -135,7 +149,5 @@
     <string name="maximum">Máximo</string>
     <string name="open_limit">Limite Abierto</string>
     <string name="closed_limit">Limite Cerrado</string>
-
-
 
 </resources>

@@ -43,7 +43,14 @@
         android:id="@+id/fragActuators"
         android:name="com.silentbit.thingshubmobile.ui.view.FragActuators"
         android:label="@string/actuators"
-        tools:layout="@layout/frag_actuators" />
+        tools:layout="@layout/frag_actuators" >
+        <action
+            android:id="@+id/action_fragActuators_to_fragActuatorAdd"
+            app:destination="@id/fragActuatorAdd" />
+        <action
+            android:id="@+id/action_fragActuators_to_fragActuatorEdit"
+            app:destination="@id/fragActutorEdit" />
+    </fragment>
     <fragment
         android:id="@+id/fragDeviceAdd"
         android:name="com.silentbit.thingshubmobile.ui.view.FragDeviceAdd"
@@ -64,4 +71,14 @@
         android:name="com.silentbit.thingshubmobile.ui.view.FragSensorsEdit"
         android:label="@string/edit_sensor"
         tools:layout="@layout/frag_sensors_edit" />
+    <fragment
+        android:id="@+id/fragActuatorAdd"
+        android:name="com.silentbit.thingshubmobile.ui.view.FragActuatorAdd"
+        android:label="frag_actuator_add"
+        tools:layout="@layout/frag_actuator_add" />
+    <fragment
+        android:id="@+id/fragActutorEdit"
+        android:name="com.silentbit.thingshubmobile.ui.view.FragActuatorEdit"
+        android:label="frag_actutor_edit"
+        tools:layout="@layout/frag_actutor_edit" />
 </navigation>

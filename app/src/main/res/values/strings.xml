@@ -123,6 +123,8 @@
     <string name="apply_changes">Apply Changes</string>
     <string name="modify_device_properties">Modify your device\'s properties</string>
 
+    <!-- Card Sensor -->
+    <string name="delete_sensors">Delete sensors</string>
 
     <!--New Sensor-->
     <string name="new_sensor">New Sensor</string>
@@ -137,12 +139,25 @@
 
     <!--Edit Sensor-->
     <string name="edit_sensor">Edit Sensor</string>
+    <string name="delete_sensors_data_confirmation">You are about to delete all data associated with the following sensors.</string>
 
     <string name="saved_successfully">Saved Successfully</string>
     <string name="already_exists">Already Exists</string>
     <string name="please_complete_ranges">Please Complete the Ranges</string>
     <string name="please_complete_all_fields">Please Complete All Fields</string>
 
+    <!-- Card Actuator -->
+    <string name="delete_actuators">Delete actuators</string>
+
+    <!--New Actuator-->
+    <string name="create_new_actuator">Create new actuator</string>
+    <string name="toggle">Toggle</string>
+
+
+    <!--Edit Actuator-->
+    <string name="edit_actuator">Edit actuator</string>
+    <string name="type">Type</string>
+    <string name="delete_actuators_data_confirmation">You are about to delete all data associated with the following actuators.</string>
 
     <!--Dialog Range-->
     <string name="modify_range">Modify Range</string>
