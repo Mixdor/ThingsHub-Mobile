@@ -73,6 +73,8 @@ class FragDevice : Fragment() {
 
         viewModelDevice.isLoading.observe(requireActivity()){
             binding.loadingDevices.isVisible = it
+            binding.fabDeviceEdit.isVisible = false
+            binding.fabDeviceRemove.isVisible = false
         }
 
         binding.fabDeviceAdd.setOnClickListener {
