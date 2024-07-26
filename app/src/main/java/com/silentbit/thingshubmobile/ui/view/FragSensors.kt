@@ -72,9 +72,9 @@ class FragSensors : Fragment() {
 
         viewModelSensor.isLoading.observe(requireActivity()){
             binding.loadingSensors.isVisible = it
+            binding.fabSensorEdit.isVisible = false
+            binding.fabSensorRemove.isVisible = false
         }
-
-
 
         binding.fabSensorAdd.setOnClickListener {
             Navigation.findNavController(requireActivity(), R.id.fragmentContainerView)
@@ -87,7 +87,6 @@ class FragSensors : Fragment() {
             for (objSensor in sensorsAdapter.dataChecked){
                 bundle.putSerializable("sensor", objSensor)
             }
-
             Navigation.findNavController(requireActivity(), R.id.fragmentContainerView)
                 .navigate(R.id.action_fragSensors_to_fragSensorsEdit, bundle)
         }
@@ -106,11 +105,11 @@ class FragSensors : Fragment() {
 
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle(getString(R.string.warning))
-                .setMessage("Estás a punto de eliminar todos los datos asociados con los siguientes sensores")
+                .setMessage(getString(R.string.delete_sensors_data_confirmation))
                 .setView(dialogView)
-                .setPositiveButton(getString(R.string.delete_devices)){ dialog, _ ->
+                .setPositiveButton(getString(R.string.delete_sensors)){ dialog, _ ->
 
-                    viewModelSensor.deleteDevice(
+                    viewModelSensor.deleteSensor(
                         sensorsAdapter.dataChecked,
                         sensorsAdapter.data
                     )
@@ -118,7 +117,6 @@ class FragSensors : Fragment() {
                     dialog.dismiss()
                 }
                 .show()
-
         }
 
     }

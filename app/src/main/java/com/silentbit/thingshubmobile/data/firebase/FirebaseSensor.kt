@@ -54,13 +54,35 @@ class FirebaseSensor @Inject constructor(
                                         val isPercentage = sensor["isPercentage"] as Boolean?
                                         val isEnableRanges = sensor["isEnableRanges"] as Boolean?
                                         val ranges = sensor["ranges"] as String?
-                                        val value = sensor["value"] as Long?
                                         val nameDevice = device["name"] as String?
+
+                                        var value = sensor["value"]
+
+                                        try {
+                                            value = value as Boolean
+                                        }catch (e:Exception){
+                                            Log.i("Sensor $sensorKey", "Value is not Boolean")
+                                            try {
+                                                value = value as Long
+                                            }catch (e:Exception){
+                                                Log.i("Sensor $sensorKey", "Value is not Long")
+                                                try {
+                                                    value = value as Double
+                                                }catch (e:Exception){
+                                                    try {
+                                                        value = value as String
+                                                    }catch (e:Exception){
+                                                        Log.i("Sensor $sensorKey", "Value is not String")
+                                                        value = 0L
+                                                    }
+                                                }
+                                            }
+                                        }
 
                                         val objSensor = ObjSensor(
                                             id = sensorKey.toString(),
                                             name = name ?: "",
-                                            value = value ?: 0,
+                                            value = value,
                                             magnitude = magnitude ?: 0L,
                                             isPercentage = isPercentage ?: false,
                                             isEnableRanges = isEnableRanges ?: false,
@@ -128,32 +150,32 @@ class FirebaseSensor @Inject constructor(
         val referenceDb = Firebase.database(firebaseApp).reference
         val referenceDevice = referenceDb.child(uid).child("devices").child(idDevice)
         val referenceSensor = referenceDevice.child("sensors").child(idSensor)
-
-        referenceSensor.setValue(hashMapOf(
+        
+        referenceSensor.updateChildren(mapOf(
             "name" to nameSensor,
             "magnitude" to magnitude,
             "isPercentage" to percentage,
             "isEnableRanges" to enableRanges,
-            "ranges" to ranges
-        ))
+            "ranges" to ranges)
+        )
 
         return true
 
     }
 
-    suspend fun removeSensor(listRemove: List<ObjSensor>, oldList: List<ObjSensor>): List<ObjSensor>{
+    suspend fun removeSensor(listRemove: List<ObjSensor>, oldList: List<ObjSensor>) : List<ObjSensor>{
 
         val firebaseApp = dataStoreManager.loadFirebaseApp()
         val uid = Firebase.auth(firebaseApp).uid.toString()
         val referenceDb = Firebase.database(firebaseApp).reference
-        val referenceDevices = referenceDb.child(uid).child("devices")
+        val referenceSensors = referenceDb.child(uid).child("devices")
 
         var newList = oldList
 
-        Log.e("listRemove", listRemove.toString())
+
         for (sensor in listRemove){
-            Log.e("sensor", sensor.toString())
-            val referenceSensor = referenceDevices.child(sensor.idDevice).child("sensors").child(sensor.id)
+
+            val referenceSensor = referenceSensors.child(sensor.idDevice).child("sensors").child(sensor.id)
             referenceSensor.removeValue().await()
             newList = newList.minus(sensor)
         }

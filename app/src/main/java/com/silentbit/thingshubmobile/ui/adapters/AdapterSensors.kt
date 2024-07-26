@@ -50,8 +50,6 @@ class AdapterSensors(
                 ).show()
             }
 
-            Log.e(":::::", sensorItem.magnitude.toString())
-
             when(sensorItem.magnitude.toInt()){
                 0 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.baseline_air_24))}
                 1 -> {magnitude.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.outline_device_thermostat_24))}

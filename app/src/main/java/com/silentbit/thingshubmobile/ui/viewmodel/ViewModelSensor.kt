@@ -25,7 +25,7 @@ class ViewModelSensor @Inject constructor(
         isLoading.postValue(false)
     }
 
-    fun deleteDevice(dataToDelete: List<ObjSensor>, oldList: List<ObjSensor>) {
+    fun deleteSensor(dataToDelete: List<ObjSensor>, oldList: List<ObjSensor>) {
         isLoading.postValue(true)
         viewModelScope.launch(Dispatchers.IO){
             val newList = removeSensorCase(dataToDelete, oldList)
