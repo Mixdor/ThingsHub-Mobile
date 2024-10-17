@@ -12,6 +12,7 @@
     <color name="outline">@color/md_theme_light_outline</color>
     <color name="primary">#00696A</color>
     <color name="subtitle">@color/md_theme_light_onPrimaryContainer</color>
+    <color name="bg_splash">#002020</color>
     <color name="image_tint">@color/md_theme_light_onSurfaceVariant</color>
 
     

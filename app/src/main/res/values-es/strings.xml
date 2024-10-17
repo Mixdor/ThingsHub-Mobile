@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ThingsHub Mobile</string>
 
     <!--General-->
     <string name="next">Siguiente</string>
@@ -135,11 +134,12 @@
     <string name="delete_actuators">Eliminar actuatores</string>
 
     <!--New Actuator-->
+    <string name="new_actuator">Nuevo Actuador</string>
     <string name="create_new_actuator">Crear nuevo actuator</string>
     <string name="toggle">Interruptor</string>
 
     <!--Edit Actuator-->
-    <string name="edit_actuator">Edit actuator</string>
+    <string name="edit_actuator">Editar Actuador</string>
     <string name="type">Tipo</string>
     <string name="delete_actuators_data_confirmation">Estás a punto de eliminar todos los datos asociados con los siguientes actuadores.</string>
 

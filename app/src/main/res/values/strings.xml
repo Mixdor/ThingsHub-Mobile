@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">ThingsHub Mobile</string>
-    <string name="things_hub" translatable="false">Things Hub</string>
+    <string name="app_name" translatable="false">SenseHub Mobile</string>
+    <string name="things_hub" translatable="false">SenseHub</string>
 
     <!--General-->
     <string name="next">Next</string>
@@ -150,9 +150,10 @@
     <string name="delete_actuators">Delete actuators</string>
 
     <!--New Actuator-->
+    <string name="new_actuator">New Actuator</string>
     <string name="create_new_actuator">Create new actuator</string>
     <string name="toggle">Toggle</string>
-
+    frag_actuator_add
 
     <!--Edit Actuator-->
     <string name="edit_actuator">Edit actuator</string>

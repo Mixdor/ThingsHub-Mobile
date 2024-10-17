@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/fragDashboard"
-        android:name="com.silentbit.thingshubmobile.ui.view.FragDashboard"
+        android:name="com.silentbit.sensehubmobile.ui.view.FragDashboard"
         android:label="@string/dashboard"
         tools:layout="@layout/frag_dashboard" />
     <fragment
         android:id="@+id/fragDataServer"
-        android:name="com.silentbit.thingshubmobile.ui.view.FragDataServer"
+        android:name="com.silentbit.sensehubmobile.ui.view.FragDataServer"
         android:label="@string/data_server"
         tools:layout="@layout/frag_data_server" />
     <fragment
         android:id="@+id/fragDevice"
-        android:name="com.silentbit.thingshubmobile.ui.view.FragDevice"
+        android:name="com.silentbit.sensehubmobile.ui.view.FragDevice"
         android:label="@string/devices"
         tools:layout="@layout/frag_device">
         <action
@@ -29,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragSensors"
-        android:name="com.silentbit.thingshubmobile.ui.view.FragSensors"
+        android:name="com.silentbit.sensehubmobile.ui.view.FragSensors"
         android:label="@string/sensors"
         tools:layout="@layout/frag_sensors" >
         <action
@@ -41,7 +41,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragActuators"
-        android:name="com.silentbit.thingshubmobile.ui.view.FragActuators"
+        android:name="com.silentbit.sensehubmobile.ui.view.FragActuators"
         android:label="@string/actuators"
         tools:layout="@layout/frag_actuators" >
         <action
@@ -53,32 +53,32 @@
     </fragment>
     <fragment
         android:id="@+id/fragDeviceAdd"
-        android:name="com.silentbit.thingshubmobile.ui.view.FragDeviceAdd"
+        android:name="com.silentbit.sensehubmobile.ui.view.FragDeviceAdd"
         android:label="@string/new_device"
         tools:layout="@layout/frag_device_add" />
     <fragment
         android:id="@+id/fragDeviceEdit"
-        android:name="com.silentbit.thingshubmobile.ui.view.FragDeviceEdit"
+        android:name="com.silentbit.sensehubmobile.ui.view.FragDeviceEdit"
         android:label="@string/edit_device"
         tools:layout="@layout/frag_device_edit" />
     <fragment
         android:id="@+id/fragSensorsAdd"
-        android:name="com.silentbit.thingshubmobile.ui.view.FragSensorsAdd"
+        android:name="com.silentbit.sensehubmobile.ui.view.FragSensorsAdd"
         android:label="@string/new_sensor"
         tools:layout="@layout/frag_sensors_add" />
     <fragment
         android:id="@+id/fragSensorsEdit"
-        android:name="com.silentbit.thingshubmobile.ui.view.FragSensorsEdit"
+        android:name="com.silentbit.sensehubmobile.ui.view.FragSensorsEdit"
         android:label="@string/edit_sensor"
         tools:layout="@layout/frag_sensors_edit" />
     <fragment
         android:id="@+id/fragActuatorAdd"
-        android:name="com.silentbit.thingshubmobile.ui.view.FragActuatorAdd"
-        android:label="frag_actuator_add"
+        android:name="com.silentbit.sensehubmobile.ui.view.FragActuatorAdd"
+        android:label="@string/new_actuator"
         tools:layout="@layout/frag_actuator_add" />
     <fragment
         android:id="@+id/fragActutorEdit"
-        android:name="com.silentbit.thingshubmobile.ui.view.FragActuatorEdit"
-        android:label="frag_actutor_edit"
+        android:name="com.silentbit.sensehubmobile.ui.view.FragActuatorEdit"
+        android:label="@string/edit_actuator"
         tools:layout="@layout/frag_actutor_edit" />
 </navigation>

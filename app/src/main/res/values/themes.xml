@@ -1,4 +1,11 @@
 <resources>
+
+    <style name="Theme.Splash" parent="Theme.SplashScreen">
+        <item name="android:windowBackground">@drawable/splash_screen_light</item>
+        <item name="android:statusBarColor">@color/bg_splash</item>
+        <item name="postSplashScreenTheme">@style/Theme.ThingsHubMobile</item>
+    </style>
+
     <!-- Base application theme. -->
     <style name="Theme.ThingsHubMobile" parent="Theme.Material3.Light.NoActionBar">
         <item name="android:statusBarColor">@color/md_theme_dark_onPrimary</item>
@@ -37,6 +44,10 @@
 
     <style name="textError" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">0px</item>
+    </style>
+
+    <style name="simpleToggleButton">
+        <item name="colorSecondaryContainer">#00FFFFFF</item>
     </style>
 
 </resources>
